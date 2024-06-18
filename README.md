@@ -16,7 +16,7 @@ Please read the [docs](https://bunny-launcher.com/bunny-sdk/java) for usage and 
 
 ## Contributing
 
-### Updating
+### Setup
 
 - Generate signing credentials with [gpg](https://www.gnupg.org/gph/en/manual.html#AEN26):
 
@@ -42,6 +42,8 @@ Please read the [docs](https://bunny-launcher.com/bunny-sdk/java) for usage and 
   - JRELEASER_MAVENCENTRAL_PASSWORD = "your-publisher-portal-password"
   - JRELEASER_GPG_PASSPHRASE = "your-pgp-passphrase"
   - JRELEASER_GITHUB_TOKEN = "your-github-token"
+
+### Updating
 
 - increment version in `build.gradle`
 - `./gradlew build` (only if you want to test locally)
