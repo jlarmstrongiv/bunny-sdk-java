@@ -38,7 +38,7 @@ publishing {
             // version is defined in the root gradle.properties file
 
             from components.java
-            
+
             pom {
                 name = "bunny-sdk"
                 description = "Java SDK for BunnyCDN 🐰"
@@ -92,18 +92,19 @@ java {
 }
 
 jreleaser {
-    release {
-      github {
-        repoOwner = 'jlarmstrongiv'
-        name = 'bunny-sdk-java'
-      }
+    gitRootSearch = true
+    files {
+        active = 'ALWAYS'
+        glob {
+            pattern = 'build/staging-deploy/**/*.jar'
+        }
     }
     signing {
         active = 'ALWAYS'
         armored = true
         mode = 'FILE'
-        publicKey = '~/.gnupg/public.pgp'
-        secretKey = '~/.gnupg/private.pgp'
+        publicKey = System.properties['user.home'] + '/.gnupg/public.pgp'
+        secretKey = System.properties['user.home'] + '/.gnupg/private.pgp'
     }
     deploy {
         maven {
@@ -111,9 +112,24 @@ jreleaser {
                 sonatype {
                     active = 'ALWAYS'
                     url = 'https://central.sonatype.com/api/v1/publisher'
+                    sign = true
+                    checksums = true
+                    sourceJar = true
+                    javadocJar = true
+                    verifyPom = true
+                    applyMavenCentralRules = true
                     stagingRepository('build/staging-deploy')
+                    namespace = 'com.bunny-launcher'
+                    retryDelay = 10
+                    maxRetries = 60
                 }
             }
+        }
+    }
+    release {
+        github {
+            repoOwner = 'jlarmstrongiv'
+            name = 'bunny-sdk-java'
         }
     }
 }

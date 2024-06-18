@@ -1,6 +1,6 @@
 # bunny-sdk
 
-![Maven Central Version](https://img.shields.io/maven-central/v/com.bunny-launcher/bunny-sdk)
+[![Maven Central Version](https://img.shields.io/maven-central/v/com.bunny-launcher/bunny-sdk)](https://central.sonatype.com/artifact/com.bunny-launcher/bunny-sdk)
 
 ## Install
 
@@ -34,6 +34,8 @@ Please read the [docs](https://bunny-launcher.com/bunny-sdk/java) for usage and 
   - `gpg --output ~/.gnupg/public.pgp --armor --export username`
   - `gpg --output ~/.gnupg/private.pgp --armor --export-secret-key username`
 
+Publish the key to any [GPG Key Server](https://maven.apache.org/developers/release/pmc-gpg-keys.html), such as [Ubuntu](https://keyserver.ubuntu.com/#submitKey).
+
 - Create a GitHub token for releases
 
 - Save signing credentials for [jreleaser](https://jreleaser.org/guide/latest/examples/maven/maven-central.html#_gradle) in `~/.jreleaser/config.toml`
@@ -45,12 +47,12 @@ Please read the [docs](https://bunny-launcher.com/bunny-sdk/java) for usage and 
 
 ### Updating
 
-- increment version in `build.gradle`
+- increment version in `gradle.properties`
 - `./gradlew build` (only if you want to test locally)
 - `git add -A`
 - `git commit -m "message"`
 - `git push`
-- `./gradlew jreleaserConfig`
+- `./gradlew jreleaserConfig --stacktrace`
 - `./gradlew clean`
 - `./gradlew publish`
-- `./gradlew jreleaserFullRelease`
+- `./gradlew jreleaserFullRelease --stacktrace`
