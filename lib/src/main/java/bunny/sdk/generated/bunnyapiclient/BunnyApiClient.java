@@ -1,7 +1,10 @@
 package bunny.sdk.generated.bunnyapiclient;
 
+import bunny.sdk.generated.bunnyapiclient.abusecase.AbusecaseRequestBuilder;
 import bunny.sdk.generated.bunnyapiclient.apikey.ApikeyRequestBuilder;
+import bunny.sdk.generated.bunnyapiclient.compute.ComputeRequestBuilder;
 import bunny.sdk.generated.bunnyapiclient.country.CountryRequestBuilder;
+import bunny.sdk.generated.bunnyapiclient.dmca.DmcaRequestBuilder;
 import bunny.sdk.generated.bunnyapiclient.dnszone.DnszoneRequestBuilder;
 import bunny.sdk.generated.bunnyapiclient.pullzone.PullzoneRequestBuilder;
 import bunny.sdk.generated.bunnyapiclient.purge.PurgeRequestBuilder;
@@ -29,6 +32,14 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class BunnyApiClient extends BaseRequestBuilder {
     /**
+     * The abusecase property
+     * @return a {@link AbusecaseRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public AbusecaseRequestBuilder abusecase() {
+        return new AbusecaseRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
      * The apikey property
      * @return a {@link ApikeyRequestBuilder}
      */
@@ -37,12 +48,28 @@ public class BunnyApiClient extends BaseRequestBuilder {
         return new ApikeyRequestBuilder(pathParameters, requestAdapter);
     }
     /**
+     * The compute property
+     * @return a {@link ComputeRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public ComputeRequestBuilder compute() {
+        return new ComputeRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
      * The country property
      * @return a {@link CountryRequestBuilder}
      */
     @jakarta.annotation.Nonnull
     public CountryRequestBuilder country() {
         return new CountryRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The dmca property
+     * @return a {@link DmcaRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public DmcaRequestBuilder dmca() {
+        return new DmcaRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The dnszone property

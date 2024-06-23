@@ -1,10 +1,11 @@
-package bunny.sdk.generated.bunnyapiclient.storagezone.item;
+package bunny.sdk.generated.bunnyapiclient.compute.script.item;
 
-import bunny.sdk.generated.bunnyapiclient.models.storagezone.StorageZone;
-import bunny.sdk.generated.bunnyapiclient.models.storagezone.StorageZoneCreate;
-import bunny.sdk.generated.bunnyapiclient.storagezone.item.connections.ConnectionsRequestBuilder;
-import bunny.sdk.generated.bunnyapiclient.storagezone.item.resetpassword.ResetPasswordRequestBuilder;
-import bunny.sdk.generated.bunnyapiclient.storagezone.item.statistics.StatisticsRequestBuilder;
+import bunny.sdk.generated.bunnyapiclient.compute.script.item.code.CodeRequestBuilder;
+import bunny.sdk.generated.bunnyapiclient.compute.script.item.publish.PublishRequestBuilder;
+import bunny.sdk.generated.bunnyapiclient.compute.script.item.releases.ReleasesRequestBuilder;
+import bunny.sdk.generated.bunnyapiclient.compute.script.item.variables.VariablesRequestBuilder;
+import bunny.sdk.generated.bunnyapiclient.models.compute.Script;
+import bunny.sdk.generated.bunnyapiclient.models.compute.ScriptCreate;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
@@ -18,54 +19,66 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /storagezone/{id}
+ * Builds and executes requests for operations under /compute/script/{id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class StoragezoneItemRequestBuilder extends BaseRequestBuilder {
+public class ScriptItemRequestBuilder extends BaseRequestBuilder {
     /**
-     * The connections property
-     * @return a {@link ConnectionsRequestBuilder}
+     * The code property
+     * @return a {@link CodeRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public ConnectionsRequestBuilder connections() {
-        return new ConnectionsRequestBuilder(pathParameters, requestAdapter);
+    public CodeRequestBuilder code() {
+        return new CodeRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * The resetPassword property
-     * @return a {@link ResetPasswordRequestBuilder}
+     * The publish property
+     * @return a {@link PublishRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public ResetPasswordRequestBuilder resetPassword() {
-        return new ResetPasswordRequestBuilder(pathParameters, requestAdapter);
+    public PublishRequestBuilder publish() {
+        return new PublishRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * The statistics property
-     * @return a {@link StatisticsRequestBuilder}
+     * The releases property
+     * @return a {@link ReleasesRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public StatisticsRequestBuilder statistics() {
-        return new StatisticsRequestBuilder(pathParameters, requestAdapter);
+    public ReleasesRequestBuilder releases() {
+        return new ReleasesRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * Instantiates a new {@link StoragezoneItemRequestBuilder} and sets the default values.
+     * The variables property
+     * @return a {@link VariablesRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public VariablesRequestBuilder variables() {
+        return new VariablesRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * Instantiates a new {@link ScriptItemRequestBuilder} and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
      */
-    public StoragezoneItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/storagezone/{id}", pathParameters);
+    public ScriptItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
+        super(requestAdapter, "{+baseurl}/compute/script/{id}", pathParameters);
     }
     /**
-     * Instantiates a new {@link StoragezoneItemRequestBuilder} and sets the default values.
+     * Instantiates a new {@link ScriptItemRequestBuilder} and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
      */
-    public StoragezoneItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/storagezone/{id}", rawUrl);
+    public ScriptItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
+        super(requestAdapter, "{+baseurl}/compute/script/{id}", rawUrl);
     }
+    /**
+     * [DeleteComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_delete)
+     */
     public void delete() {
         delete(null);
     }
     /**
+     * [DeleteComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_delete)
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      */
     public void delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
@@ -73,41 +86,46 @@ public class StoragezoneItemRequestBuilder extends BaseRequestBuilder {
         this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
     }
     /**
-     * [GetStorageZone API Docs](https://docs.bunny.net/reference/storagezonepublic_index2)
-     * @return a {@link StorageZone}
+     * [GetComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_index2)
+     * @return a {@link Script}
      */
     @jakarta.annotation.Nullable
-    public StorageZone get() {
+    public Script get() {
         return get(null);
     }
     /**
-     * [GetStorageZone API Docs](https://docs.bunny.net/reference/storagezonepublic_index2)
+     * [GetComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_index2)
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link StorageZone}
+     * @return a {@link Script}
      */
     @jakarta.annotation.Nullable
-    public StorageZone get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    public Script get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, StorageZone::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, Script::createFromDiscriminatorValue);
     }
     /**
-     * [UpdateStorageZone API Docs](https://docs.bunny.net/reference/storagezonepublic_update)
+     * [UpdateComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_update)
      * @param body The request body
+     * @return a {@link Script}
      */
-    public void post(@jakarta.annotation.Nonnull final StorageZoneCreate body) {
-        post(body, null);
+    @jakarta.annotation.Nullable
+    public Script post(@jakarta.annotation.Nonnull final ScriptCreate body) {
+        return post(body, null);
     }
     /**
-     * [UpdateStorageZone API Docs](https://docs.bunny.net/reference/storagezonepublic_update)
+     * [UpdateComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_update)
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link Script}
      */
-    public void post(@jakarta.annotation.Nonnull final StorageZoneCreate body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public Script post(@jakarta.annotation.Nonnull final ScriptCreate body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        return this.requestAdapter.send(requestInfo, null, Script::createFromDiscriminatorValue);
     }
     /**
+     * [DeleteComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_delete)
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -115,6 +133,7 @@ public class StoragezoneItemRequestBuilder extends BaseRequestBuilder {
         return toDeleteRequestInformation(null);
     }
     /**
+     * [DeleteComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_delete)
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -125,7 +144,7 @@ public class StoragezoneItemRequestBuilder extends BaseRequestBuilder {
         return requestInfo;
     }
     /**
-     * [GetStorageZone API Docs](https://docs.bunny.net/reference/storagezonepublic_index2)
+     * [GetComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_index2)
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -133,7 +152,7 @@ public class StoragezoneItemRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * [GetStorageZone API Docs](https://docs.bunny.net/reference/storagezonepublic_index2)
+     * [GetComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_index2)
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -145,37 +164,38 @@ public class StoragezoneItemRequestBuilder extends BaseRequestBuilder {
         return requestInfo;
     }
     /**
-     * [UpdateStorageZone API Docs](https://docs.bunny.net/reference/storagezonepublic_update)
+     * [UpdateComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_update)
      * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final StorageZoneCreate body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ScriptCreate body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * [UpdateStorageZone API Docs](https://docs.bunny.net/reference/storagezonepublic_update)
+     * [UpdateComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_update)
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final StorageZoneCreate body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ScriptCreate body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
     }
     /**
      * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
      * @param rawUrl The raw URL to use for the request builder.
-     * @return a {@link StoragezoneItemRequestBuilder}
+     * @return a {@link ScriptItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public StoragezoneItemRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
+    public ScriptItemRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
         Objects.requireNonNull(rawUrl);
-        return new StoragezoneItemRequestBuilder(rawUrl, requestAdapter);
+        return new ScriptItemRequestBuilder(rawUrl, requestAdapter);
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.

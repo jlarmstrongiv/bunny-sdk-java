@@ -19,6 +19,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import java.io.InputStream;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -159,20 +160,23 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * [UploadVideo API Docs](https://docs.bunny.net/reference/video_uploadvideo)
+     * @param body Binary request body
      * @return a {@link StructuredSuccessResponse}
      */
     @jakarta.annotation.Nullable
-    public StructuredSuccessResponse put() {
-        return put(null);
+    public StructuredSuccessResponse put(@jakarta.annotation.Nonnull final InputStream body) {
+        return put(body, null);
     }
     /**
      * [UploadVideo API Docs](https://docs.bunny.net/reference/video_uploadvideo)
+     * @param body Binary request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link StructuredSuccessResponse}
      */
     @jakarta.annotation.Nullable
-    public StructuredSuccessResponse put(@jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = toPutRequestInformation(requestConfiguration);
+    public StructuredSuccessResponse put(@jakarta.annotation.Nonnull final InputStream body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
+        final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, StructuredSuccessResponse::createFromDiscriminatorValue);
     }
     /**
@@ -241,22 +245,26 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * [UploadVideo API Docs](https://docs.bunny.net/reference/video_uploadvideo)
+     * @param body Binary request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation() {
-        return toPutRequestInformation(null);
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final InputStream body) {
+        return toPutRequestInformation(body, null);
     }
     /**
      * [UploadVideo API Docs](https://docs.bunny.net/reference/video_uploadvideo)
+     * @param body Binary request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final InputStream body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PutRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setStreamContent(body, "application/octet-stream");
         return requestInfo;
     }
     /**

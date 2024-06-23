@@ -10,24 +10,35 @@ import com.microsoft.kiota.http.OkHttpRequestAdapter;
 import bunny.sdk.generated.bunnyapiclient.BunnyApiClient;
 import bunny.sdk.generated.edgestorageapiclient.EdgeStorageApiClient;
 import bunny.sdk.generated.streamapiclient.StreamApiClient;
+import bunny.sdk.generated.loggingapiclient.LoggingApiClient;
 
 public class BunnySdk {
 
-    public static BunnyApiClient createBunnyApiClient(CreateBunnyApiClientParameters options) {
-        final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "AccessKey", ApiKeyLocation.HEADER);
-        final OkHttpRequestAdapter adapter = new OkHttpRequestAdapter(authProvider);
-        return new BunnyApiClient(adapter);
-    }
+  public static BunnyApiClient createBunnyApiClient(CreateBunnyApiClientParameters options) {
+    final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "AccessKey",
+        ApiKeyLocation.HEADER);
+    final OkHttpRequestAdapter adapter = new OkHttpRequestAdapter(authProvider);
+    return new BunnyApiClient(adapter);
+  }
 
-    public static EdgeStorageApiClient createEdgeStorageApiClient(CreateEdgeStorageApiClientParameters options) {
-        final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "AccessKey", ApiKeyLocation.HEADER);
-        final OkHttpRequestAdapter adapter = new OkHttpRequestAdapter(authProvider);
-        return new EdgeStorageApiClient(adapter);
-    }
+  public static EdgeStorageApiClient createEdgeStorageApiClient(CreateEdgeStorageApiClientParameters options) {
+    final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "AccessKey",
+        ApiKeyLocation.HEADER);
+    final OkHttpRequestAdapter adapter = new OkHttpRequestAdapter(authProvider);
+    return new EdgeStorageApiClient(adapter);
+  }
 
-    public static StreamApiClient createStreamApiClient(CreateStreamApiClientParameters options) {
-        final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "AccessKey", ApiKeyLocation.HEADER);
-        final OkHttpRequestAdapter adapter = new OkHttpRequestAdapter(authProvider);
-        return new StreamApiClient(adapter);
-    }
+  public static StreamApiClient createStreamApiClient(CreateStreamApiClientParameters options) {
+    final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "AccessKey",
+        ApiKeyLocation.HEADER);
+    final OkHttpRequestAdapter adapter = new OkHttpRequestAdapter(authProvider);
+    return new StreamApiClient(adapter);
+  }
+
+  public static LoggingApiClient createLoggingApiClient(CreateLoggingApiClientParameters options) {
+    final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "AccessKey",
+        ApiKeyLocation.HEADER);
+    final OkHttpRequestAdapter adapter = new OkHttpRequestAdapter(authProvider);
+    return new LoggingApiClient(adapter);
+  }
 }

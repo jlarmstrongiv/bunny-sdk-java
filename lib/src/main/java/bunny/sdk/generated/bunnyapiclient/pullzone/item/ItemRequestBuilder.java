@@ -19,6 +19,7 @@ import bunny.sdk.generated.bunnyapiclient.pullzone.item.removehostname.RemoveHos
 import bunny.sdk.generated.bunnyapiclient.pullzone.item.resetsecuritykey.ResetSecurityKeyRequestBuilder;
 import bunny.sdk.generated.bunnyapiclient.pullzone.item.safehop.SafehopRequestBuilder;
 import bunny.sdk.generated.bunnyapiclient.pullzone.item.setforcessl.SetForceSSLRequestBuilder;
+import bunny.sdk.generated.bunnyapiclient.pullzone.item.waf.WafRequestBuilder;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
@@ -172,6 +173,14 @@ public class ItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public SetForceSSLRequestBuilder setForceSSL() {
         return new SetForceSSLRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The waf property
+     * @return a {@link WafRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public WafRequestBuilder waf() {
+        return new WafRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link ItemRequestBuilder} and sets the default values.

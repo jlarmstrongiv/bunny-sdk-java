@@ -10,6 +10,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import java.io.InputStream;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +26,7 @@ public class ThumbnailRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public ThumbnailRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/{videoId}/thumbnail?thumbnailUrl={thumbnailUrl}", pathParameters);
+        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/{videoId}/thumbnail{?thumbnailUrl*}", pathParameters);
     }
     /**
      * Instantiates a new {@link ThumbnailRequestBuilder} and sets the default values.
@@ -33,44 +34,51 @@ public class ThumbnailRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public ThumbnailRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/{videoId}/thumbnail?thumbnailUrl={thumbnailUrl}", rawUrl);
+        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/{videoId}/thumbnail{?thumbnailUrl*}", rawUrl);
     }
     /**
      * [SetThumbnail API Docs](https://docs.bunny.net/reference/video_setthumbnail)
+     * @param body Binary request body
      * @return a {@link StructuredSuccessResponse}
      */
     @jakarta.annotation.Nullable
-    public StructuredSuccessResponse post() {
-        return post(null);
+    public StructuredSuccessResponse post(@jakarta.annotation.Nonnull final InputStream body) {
+        return post(body, null);
     }
     /**
      * [SetThumbnail API Docs](https://docs.bunny.net/reference/video_setthumbnail)
+     * @param body Binary request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link StructuredSuccessResponse}
      */
     @jakarta.annotation.Nullable
-    public StructuredSuccessResponse post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
+    public StructuredSuccessResponse post(@jakarta.annotation.Nonnull final InputStream body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
+        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, StructuredSuccessResponse::createFromDiscriminatorValue);
     }
     /**
      * [SetThumbnail API Docs](https://docs.bunny.net/reference/video_setthumbnail)
+     * @param body Binary request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation() {
-        return toPostRequestInformation(null);
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final InputStream body) {
+        return toPostRequestInformation(body, null);
     }
     /**
      * [SetThumbnail API Docs](https://docs.bunny.net/reference/video_setthumbnail)
+     * @param body Binary request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final InputStream body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setStreamContent(body, "image/*");
         return requestInfo;
     }
     /**
