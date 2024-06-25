@@ -11,6 +11,7 @@ import bunny.sdk.generated.bunnyapiclient.purge.PurgeRequestBuilder;
 import bunny.sdk.generated.bunnyapiclient.region.RegionRequestBuilder;
 import bunny.sdk.generated.bunnyapiclient.statistics.StatisticsRequestBuilder;
 import bunny.sdk.generated.bunnyapiclient.storagezone.StoragezoneRequestBuilder;
+import bunny.sdk.generated.bunnyapiclient.user.UserRequestBuilder;
 import bunny.sdk.generated.bunnyapiclient.videolibrary.VideolibraryRequestBuilder;
 import com.microsoft.kiota.ApiClientBuilder;
 import com.microsoft.kiota.BaseRequestBuilder;
@@ -118,6 +119,14 @@ public class BunnyApiClient extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public StoragezoneRequestBuilder storagezone() {
         return new StoragezoneRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The user property
+     * @return a {@link UserRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public UserRequestBuilder user() {
+        return new UserRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The videolibrary property

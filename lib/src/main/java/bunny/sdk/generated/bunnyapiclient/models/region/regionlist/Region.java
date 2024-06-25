@@ -44,7 +44,7 @@ public class Region implements AdditionalDataHolder, Parsable {
     /**
      * The PricePerGigabyte property
      */
-    private Float pricePerGigabyte;
+    private Double pricePerGigabyte;
     /**
      * The RegionCode property
      */
@@ -111,7 +111,7 @@ public class Region implements AdditionalDataHolder, Parsable {
         deserializerMap.put("Latitude", (n) -> { this.setLatitude(n.getDoubleValue()); });
         deserializerMap.put("Longitude", (n) -> { this.setLongitude(n.getDoubleValue()); });
         deserializerMap.put("Name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("PricePerGigabyte", (n) -> { this.setPricePerGigabyte(n.getFloatValue()); });
+        deserializerMap.put("PricePerGigabyte", (n) -> { this.setPricePerGigabyte(n.getDoubleValue()); });
         deserializerMap.put("RegionCode", (n) -> { this.setRegionCode(n.getStringValue()); });
         return deserializerMap;
     }
@@ -149,10 +149,10 @@ public class Region implements AdditionalDataHolder, Parsable {
     }
     /**
      * Gets the PricePerGigabyte property value. The PricePerGigabyte property
-     * @return a {@link Float}
+     * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
-    public Float getPricePerGigabyte() {
+    public Double getPricePerGigabyte() {
         return this.pricePerGigabyte;
     }
     /**
@@ -176,7 +176,7 @@ public class Region implements AdditionalDataHolder, Parsable {
         writer.writeDoubleValue("Latitude", this.getLatitude());
         writer.writeDoubleValue("Longitude", this.getLongitude());
         writer.writeStringValue("Name", this.getName());
-        writer.writeFloatValue("PricePerGigabyte", this.getPricePerGigabyte());
+        writer.writeDoubleValue("PricePerGigabyte", this.getPricePerGigabyte());
         writer.writeStringValue("RegionCode", this.getRegionCode());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -240,7 +240,7 @@ public class Region implements AdditionalDataHolder, Parsable {
      * Sets the PricePerGigabyte property value. The PricePerGigabyte property
      * @param value Value to set for the PricePerGigabyte property.
      */
-    public void setPricePerGigabyte(@jakarta.annotation.Nullable final Float value) {
+    public void setPricePerGigabyte(@jakarta.annotation.Nullable final Double value) {
         this.pricePerGigabyte = value;
     }
     /**

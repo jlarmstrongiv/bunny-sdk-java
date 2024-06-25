@@ -50,7 +50,7 @@ public class StorageZone implements AdditionalDataHolder, Parsable {
     /**
      * The PriceOverride property
      */
-    private Long priceOverride;
+    private Double priceOverride;
     /**
      * The PullZones property
      */
@@ -162,7 +162,7 @@ public class StorageZone implements AdditionalDataHolder, Parsable {
         deserializerMap.put("Id", (n) -> { this.setId(n.getLongValue()); });
         deserializerMap.put("Name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("Password", (n) -> { this.setPassword(n.getStringValue()); });
-        deserializerMap.put("PriceOverride", (n) -> { this.setPriceOverride(n.getLongValue()); });
+        deserializerMap.put("PriceOverride", (n) -> { this.setPriceOverride(n.getDoubleValue()); });
         deserializerMap.put("PullZones", (n) -> { this.setPullZones(n.getCollectionOfObjectValues(PullZone::createFromDiscriminatorValue)); });
         deserializerMap.put("ReadOnlyPassword", (n) -> { this.setReadOnlyPassword(n.getStringValue()); });
         deserializerMap.put("Region", (n) -> { this.setRegion(n.getEnumValue(StandardRegions::forValue)); });
@@ -209,10 +209,10 @@ public class StorageZone implements AdditionalDataHolder, Parsable {
     }
     /**
      * Gets the PriceOverride property value. The PriceOverride property
-     * @return a {@link Long}
+     * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
-    public Long getPriceOverride() {
+    public Double getPriceOverride() {
         return this.priceOverride;
     }
     /**
@@ -376,7 +376,7 @@ public class StorageZone implements AdditionalDataHolder, Parsable {
      * Sets the PriceOverride property value. The PriceOverride property
      * @param value Value to set for the PriceOverride property.
      */
-    public void setPriceOverride(@jakarta.annotation.Nullable final Long value) {
+    public void setPriceOverride(@jakarta.annotation.Nullable final Double value) {
         this.priceOverride = value;
     }
     /**

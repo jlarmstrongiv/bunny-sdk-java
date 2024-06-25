@@ -294,7 +294,7 @@ public class PullZone implements AdditionalDataHolder, Parsable {
     /**
      * The maximum rate at which the zone will transfer data in kb/s. 0 for unlimited
      */
-    private Integer limitRatePerSecond;
+    private Double limitRatePerSecond;
     /**
      * The LogAnonymizationType property
      */
@@ -1239,7 +1239,7 @@ public class PullZone implements AdditionalDataHolder, Parsable {
         deserializerMap.put("Id", (n) -> { this.setId(n.getLongValue()); });
         deserializerMap.put("IgnoreQueryStrings", (n) -> { this.setIgnoreQueryStrings(n.getBooleanValue()); });
         deserializerMap.put("LimitRateAfter", (n) -> { this.setLimitRateAfter(n.getDoubleValue()); });
-        deserializerMap.put("LimitRatePerSecond", (n) -> { this.setLimitRatePerSecond(n.getIntegerValue()); });
+        deserializerMap.put("LimitRatePerSecond", (n) -> { this.setLimitRatePerSecond(n.getDoubleValue()); });
         deserializerMap.put("LogAnonymizationType", (n) -> { this.setLogAnonymizationType(n.getDoubleValue()); });
         deserializerMap.put("LogFormat", (n) -> { this.setLogFormat(n.getDoubleValue()); });
         deserializerMap.put("LogForwardingEnabled", (n) -> { this.setLogForwardingEnabled(n.getBooleanValue()); });
@@ -1367,10 +1367,10 @@ public class PullZone implements AdditionalDataHolder, Parsable {
     }
     /**
      * Gets the LimitRatePerSecond property value. The maximum rate at which the zone will transfer data in kb/s. 0 for unlimited
-     * @return a {@link Integer}
+     * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
-    public Integer getLimitRatePerSecond() {
+    public Double getLimitRatePerSecond() {
         return this.limitRatePerSecond;
     }
     /**
@@ -2101,7 +2101,7 @@ public class PullZone implements AdditionalDataHolder, Parsable {
         writer.writeBooleanValue("FollowRedirects", this.getFollowRedirects());
         writer.writeBooleanValue("IgnoreQueryStrings", this.getIgnoreQueryStrings());
         writer.writeDoubleValue("LimitRateAfter", this.getLimitRateAfter());
-        writer.writeIntegerValue("LimitRatePerSecond", this.getLimitRatePerSecond());
+        writer.writeDoubleValue("LimitRatePerSecond", this.getLimitRatePerSecond());
         writer.writeDoubleValue("LogAnonymizationType", this.getLogAnonymizationType());
         writer.writeDoubleValue("LogFormat", this.getLogFormat());
         writer.writeBooleanValue("LogForwardingEnabled", this.getLogForwardingEnabled());
@@ -2673,7 +2673,7 @@ public class PullZone implements AdditionalDataHolder, Parsable {
      * Sets the LimitRatePerSecond property value. The maximum rate at which the zone will transfer data in kb/s. 0 for unlimited
      * @param value Value to set for the LimitRatePerSecond property.
      */
-    public void setLimitRatePerSecond(@jakarta.annotation.Nullable final Integer value) {
+    public void setLimitRatePerSecond(@jakarta.annotation.Nullable final Double value) {
         this.limitRatePerSecond = value;
     }
     /**

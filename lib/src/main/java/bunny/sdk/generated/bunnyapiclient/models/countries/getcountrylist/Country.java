@@ -40,7 +40,7 @@ public class Country implements AdditionalDataHolder, Parsable {
     /**
      * The TaxRate property
      */
-    private Integer taxRate;
+    private Double taxRate;
     /**
      * Instantiates a new {@link Country} and sets the default values.
      */
@@ -78,7 +78,7 @@ public class Country implements AdditionalDataHolder, Parsable {
         deserializerMap.put("Name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("PopList", (n) -> { this.setPopList(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("TaxPrefix", (n) -> { this.setTaxPrefix(n.getStringValue()); });
-        deserializerMap.put("TaxRate", (n) -> { this.setTaxRate(n.getIntegerValue()); });
+        deserializerMap.put("TaxRate", (n) -> { this.setTaxRate(n.getDoubleValue()); });
         return deserializerMap;
     }
     /**
@@ -131,10 +131,10 @@ public class Country implements AdditionalDataHolder, Parsable {
     }
     /**
      * Gets the TaxRate property value. The TaxRate property
-     * @return a {@link Integer}
+     * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
-    public Integer getTaxRate() {
+    public Double getTaxRate() {
         return this.taxRate;
     }
     /**
@@ -149,7 +149,7 @@ public class Country implements AdditionalDataHolder, Parsable {
         writer.writeStringValue("Name", this.getName());
         writer.writeCollectionOfPrimitiveValues("PopList", this.getPopList());
         writer.writeStringValue("TaxPrefix", this.getTaxPrefix());
-        writer.writeIntegerValue("TaxRate", this.getTaxRate());
+        writer.writeDoubleValue("TaxRate", this.getTaxRate());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -205,7 +205,7 @@ public class Country implements AdditionalDataHolder, Parsable {
      * Sets the TaxRate property value. The TaxRate property
      * @param value Value to set for the TaxRate property.
      */
-    public void setTaxRate(@jakarta.annotation.Nullable final Integer value) {
+    public void setTaxRate(@jakarta.annotation.Nullable final Double value) {
         this.taxRate = value;
     }
 }
