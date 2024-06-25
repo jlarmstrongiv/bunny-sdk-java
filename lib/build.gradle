@@ -41,7 +41,7 @@ publishing {
 
             pom {
                 name = "bunny-sdk"
-                description = "Java SDK for BunnyCDN 🐰"
+                description = "Java SDK for bunny.net 🐰"
                 url = "https://bunny-launcher.com/bunny-sdk/java"
                 packaging = "jar"
                 properties = [:]
