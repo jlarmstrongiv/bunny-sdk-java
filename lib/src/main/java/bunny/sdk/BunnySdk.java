@@ -25,6 +25,7 @@ public class BunnySdk {
     final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "AccessKey",
         ApiKeyLocation.HEADER);
     final OkHttpRequestAdapter adapter = new OkHttpRequestAdapter(authProvider);
+    adapter.setBaseUrl(options.baseUrl);
     return new EdgeStorageApiClient(adapter);
   }
 
