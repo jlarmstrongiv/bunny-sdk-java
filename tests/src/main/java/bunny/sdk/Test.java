@@ -2,10 +2,10 @@ package bunny.sdk;
 
 import java.util.List;
 
-import bunny.sdk.generated.bunnyapiclient.BunnyApiClient;
-import bunny.sdk.generated.bunnyapiclient.models.countries.getcountrylist.Country;
-import bunny.sdk.generated.bunnyapiclient.models.storagezone.StorageZone;
-import bunny.sdk.generated.bunnyapiclient.storagezone.StoragezoneGetResponse;
+import bunny.sdk.bunnyapiclient.BunnyApiClient;
+import bunny.sdk.bunnyapiclient.models.countries.getcountrylist.Country;
+import bunny.sdk.bunnyapiclient.models.storagezone.StorageZone;
+import bunny.sdk.bunnyapiclient.storagezone.StoragezoneGetResponse;
 
 // BUNNY_API_ACCESS_KEY="***" ./gradlew --console plain run
 // BUNNY_API_ACCESS_KEY="***" ./gradlew --console plain --warning-mode none run

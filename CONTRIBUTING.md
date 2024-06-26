@@ -29,6 +29,9 @@ Publish the key to any [GPG Key Server](https://maven.apache.org/developers/rele
   - JRELEASER_GPG_PASSPHRASE = "your-pgp-passphrase"
   - JRELEASER_GITHUB_TOKEN = "your-github-token"
 
+- VS Code extensions
+  - `redhat.java`
+
 ## Updating
 
 - increment version in `gradle.properties`

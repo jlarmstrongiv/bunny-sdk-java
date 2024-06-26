@@ -7,10 +7,10 @@ import com.microsoft.kiota.authentication.ApiKeyAuthenticationProvider;
 import com.microsoft.kiota.authentication.ApiKeyLocation;
 import com.microsoft.kiota.http.OkHttpRequestAdapter;
 
-import bunny.sdk.generated.bunnyapiclient.BunnyApiClient;
-import bunny.sdk.generated.edgestorageapiclient.EdgeStorageApiClient;
-import bunny.sdk.generated.streamapiclient.StreamApiClient;
-import bunny.sdk.generated.loggingapiclient.LoggingApiClient;
+import bunny.sdk.bunnyapiclient.BunnyApiClient;
+import bunny.sdk.edgestorageapiclient.EdgeStorageApiClient;
+import bunny.sdk.streamapiclient.StreamApiClient;
+import bunny.sdk.loggingapiclient.LoggingApiClient;
 
 public class BunnySdk {
 
