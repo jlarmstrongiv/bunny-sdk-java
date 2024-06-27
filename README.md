@@ -1,6 +1,6 @@
 # bunny-sdk
 
-[![Maven Central Version](https://img.shields.io/maven-central/v/com.bunny-launcher/bunny-sdk)](https://central.sonatype.com/artifact/com.bunny-launcher/bunny-sdk)
+[![Maven Central Version](https://img.shields.io/maven-central/v/com.bunny-launcher/bunny-sdk?color=blue)](https://central.sonatype.com/artifact/com.bunny-launcher/bunny-sdk)
 
 ## Installation
 
