@@ -121,7 +121,7 @@ jreleaser {
                     stagingRepository('build/staging-deploy')
                     namespace = 'com.bunny-launcher'
                     retryDelay = 10
-                    maxRetries = 60
+                    maxRetries = 120
                 }
             }
         }
