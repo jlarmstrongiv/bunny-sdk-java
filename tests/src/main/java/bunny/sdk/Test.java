@@ -7,14 +7,14 @@ import bunny.sdk.bunnyapiclient.models.countries.getcountrylist.Country;
 import bunny.sdk.bunnyapiclient.models.storagezone.StorageZone;
 import bunny.sdk.bunnyapiclient.storagezone.StoragezoneGetResponse;
 
-// BUNNY_API_ACCESS_KEY="***" ./gradlew --console plain run
-// BUNNY_API_ACCESS_KEY="***" ./gradlew --console plain --warning-mode none run
+// BUNNY_ACCESS_KEY="***" ./gradlew --console plain run
+// BUNNY_ACCESS_KEY="***" ./gradlew --console plain --warning-mode none run
 
 public class Test {
   public static void main(String[] args) {
     final BunnyApiClient client = BunnySdk.createBunnyApiClient(
         CreateBunnyApiClientParameters.Builder.create()
-            .setAccessKey(System.getenv().getOrDefault("BUNNY_API_ACCESS_KEY", ""))
+            .setAccessKey(System.getenv().getOrDefault("BUNNY_ACCESS_KEY", ""))
             .build());
 
     try {
