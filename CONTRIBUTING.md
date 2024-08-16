@@ -37,6 +37,7 @@ Publish the key to any [GPG Key Server](https://maven.apache.org/developers/rele
 - patch `WithCollectionItemRequestBuilder` import `import bunny.sdk.streamapiclient.models.managecollections.Collection;`
 - increment version in `gradle.properties`
 - `./gradlew build`, if you want to test locally
+- `BUNNY_ACCESS_KEY="***" ./gradlew --console plain run`
 - `git add -A`
 - `git commit -m "message"`
 - `git push`

@@ -25,7 +25,7 @@ public class PlayRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PlayRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/{videoId}/play{?expires*,token*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/{videoId}/play{?expires,token}", pathParameters);
     }
     /**
      * Instantiates a new {@link PlayRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class PlayRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PlayRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/{videoId}/play{?expires*,token*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/{videoId}/play{?expires,token}", rawUrl);
     }
     /**
      * [GetVideoPlayData API Docs](https://docs.bunny.net/reference/video_getvideoplaydata)

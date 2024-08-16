@@ -91,7 +91,7 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithVideoItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/{videoId}{?enabledResolutions*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/{videoId}{?enabledResolutions}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithVideoItemRequestBuilder} and sets the default values.
@@ -99,7 +99,7 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithVideoItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/{videoId}{?enabledResolutions*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/{videoId}{?enabledResolutions}", rawUrl);
     }
     /**
      * [DeleteVideo API Docs](https://docs.bunny.net/reference/video_deletevideo)

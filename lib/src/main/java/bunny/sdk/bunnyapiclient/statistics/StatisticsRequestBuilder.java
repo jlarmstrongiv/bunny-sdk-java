@@ -26,7 +26,7 @@ public class StatisticsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public StatisticsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/statistics{?dateFrom*,dateTo*,hourly*,loadErrors*,pullZone*,serverZoneId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/statistics{?dateFrom,dateTo,hourly,loadErrors,pullZone,serverZoneId}", pathParameters);
     }
     /**
      * Instantiates a new {@link StatisticsRequestBuilder} and sets the default values.
@@ -34,7 +34,7 @@ public class StatisticsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public StatisticsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/statistics{?dateFrom*,dateTo*,hourly*,loadErrors*,pullZone*,serverZoneId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/statistics{?dateFrom,dateTo,hourly,loadErrors,pullZone,serverZoneId}", rawUrl);
     }
     /**
      * [GetStatistics API Docs](https://docs.bunny.net/reference/statisticspublic_index)

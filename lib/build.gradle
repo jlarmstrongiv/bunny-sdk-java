@@ -22,12 +22,12 @@ dependencies {
     testImplementation libs.junit
 
     implementation 'jakarta.annotation:jakarta.annotation-api:3.0.0'
-    api 'com.microsoft.kiota:microsoft-kiota-abstractions:1.1.14'
-    api 'com.microsoft.kiota:microsoft-kiota-http-okHttp:1.1.14'
-    api 'com.microsoft.kiota:microsoft-kiota-serialization-json:1.1.14'
-    api 'com.microsoft.kiota:microsoft-kiota-serialization-text:1.1.14'
-    api 'com.microsoft.kiota:microsoft-kiota-serialization-form:1.1.14'
-    api 'com.microsoft.kiota:microsoft-kiota-serialization-multipart:1.1.14'
+    api 'com.microsoft.kiota:microsoft-kiota-abstractions:1.2.0'
+    api 'com.microsoft.kiota:microsoft-kiota-http-okHttp:1.2.0'
+    api 'com.microsoft.kiota:microsoft-kiota-serialization-json:1.2.0'
+    api 'com.microsoft.kiota:microsoft-kiota-serialization-text:1.2.0'
+    api 'com.microsoft.kiota:microsoft-kiota-serialization-form:1.2.0'
+    api 'com.microsoft.kiota:microsoft-kiota-serialization-multipart:1.2.0'
 }
 
 publishing {
@@ -42,7 +42,7 @@ publishing {
             pom {
                 name = "bunny-sdk"
                 description = "Java SDK for bunny.net 🐰"
-                url = "https://bunny-launcher.com/bunny-sdk/languages/java/"
+                url = "https://bunny-launcher.net/bunny-sdk/languages/java/"
                 packaging = "jar"
                 properties = [:]
                 licenses {

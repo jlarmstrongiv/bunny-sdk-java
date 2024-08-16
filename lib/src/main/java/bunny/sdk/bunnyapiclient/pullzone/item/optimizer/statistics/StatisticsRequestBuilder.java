@@ -25,7 +25,7 @@ public class StatisticsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public StatisticsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/pullzone/{%2Did}/optimizer/statistics{?dateFrom*,dateTo*,hourly*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/pullzone/{%2Did}/optimizer/statistics{?dateFrom,dateTo,hourly}", pathParameters);
     }
     /**
      * Instantiates a new {@link StatisticsRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class StatisticsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public StatisticsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/pullzone/{%2Did}/optimizer/statistics{?dateFrom*,dateTo*,hourly*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/pullzone/{%2Did}/optimizer/statistics{?dateFrom,dateTo,hourly}", rawUrl);
     }
     /**
      * [GetOptimizerStatistics API Docs](https://docs.bunny.net/reference/pullzonepublic_optimizerstatistics)

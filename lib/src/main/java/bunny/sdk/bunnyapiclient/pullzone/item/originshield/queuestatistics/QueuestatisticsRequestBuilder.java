@@ -25,7 +25,7 @@ public class QueuestatisticsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public QueuestatisticsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/pullzone/{%2Did}/originshield/queuestatistics{?dateFrom*,dateTo*,hourly*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/pullzone/{%2Did}/originshield/queuestatistics{?dateFrom,dateTo,hourly}", pathParameters);
     }
     /**
      * Instantiates a new {@link QueuestatisticsRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class QueuestatisticsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public QueuestatisticsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/pullzone/{%2Did}/originshield/queuestatistics{?dateFrom*,dateTo*,hourly*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/pullzone/{%2Did}/originshield/queuestatistics{?dateFrom,dateTo,hourly}", rawUrl);
     }
     /**
      * [GetOriginShieldQueueStatistics API Docs](https://docs.bunny.net/reference/pullzonepublic_originshieldconcurrencystatistics)

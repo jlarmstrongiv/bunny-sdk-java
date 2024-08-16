@@ -25,7 +25,7 @@ public class FetchRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FetchRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/fetch{?collectionId*,thumbnailTime*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/fetch{?collectionId,thumbnailTime}", pathParameters);
     }
     /**
      * Instantiates a new {@link FetchRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class FetchRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FetchRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/fetch{?collectionId*,thumbnailTime*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/library/{libraryId}/videos/fetch{?collectionId,thumbnailTime}", rawUrl);
     }
     /**
      * [FetchVideo API Docs](https://docs.bunny.net/reference/video_fetchnewvideo)

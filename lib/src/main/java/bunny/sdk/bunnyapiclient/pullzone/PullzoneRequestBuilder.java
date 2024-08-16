@@ -57,7 +57,7 @@ public class PullzoneRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PullzoneRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/pullzone?includeCertificate={includeCertificate}&page={page}&perPage={perPage}{&search*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/pullzone?includeCertificate={includeCertificate}&page={page}&perPage={perPage}{&search}", pathParameters);
     }
     /**
      * Instantiates a new {@link PullzoneRequestBuilder} and sets the default values.
@@ -65,7 +65,7 @@ public class PullzoneRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PullzoneRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/pullzone?includeCertificate={includeCertificate}&page={page}&perPage={perPage}{&search*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/pullzone?includeCertificate={includeCertificate}&page={page}&perPage={perPage}{&search}", rawUrl);
     }
     /**
      * [ListPullZones API Docs](https://docs.bunny.net/reference/pullzonepublic_index)

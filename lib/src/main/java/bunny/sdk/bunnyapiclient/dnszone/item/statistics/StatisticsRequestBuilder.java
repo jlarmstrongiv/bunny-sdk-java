@@ -25,7 +25,7 @@ public class StatisticsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public StatisticsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/dnszone/{%2Did}/statistics{?dateFrom*,dateTo*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/dnszone/{%2Did}/statistics{?dateFrom,dateTo}", pathParameters);
     }
     /**
      * Instantiates a new {@link StatisticsRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class StatisticsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public StatisticsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/dnszone/{%2Did}/statistics{?dateFrom*,dateTo*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/dnszone/{%2Did}/statistics{?dateFrom,dateTo}", rawUrl);
     }
     /**
      * [GetDnsQueryStatistics API Docs](https://docs.bunny.net/reference/dnszonepublic_statistics)

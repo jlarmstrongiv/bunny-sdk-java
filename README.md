@@ -12,4 +12,4 @@ implementation 'com.bunny-launcher:bunny-sdk:0.0.0'
 
 ## Documentation
 
-Please read the [docs](https://bunny-launcher.com/bunny-sdk/languages/java/) for usage and examples.
+Please read the [docs](https://bunny-launcher.net/bunny-sdk/languages/java/) for usage and examples.
