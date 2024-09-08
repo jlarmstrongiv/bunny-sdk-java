@@ -34,6 +34,7 @@ Publish the key to any [GPG Key Server](https://maven.apache.org/developers/rele
 
 ## Updating
 
+- manually upgrade versions in `build.gradle` dependencies
 - increment version in `gradle.properties`
 - `./gradlew build`, if you want to test locally
 - `BUNNY_ACCESS_KEY="***" ./gradlew --console plain run`
