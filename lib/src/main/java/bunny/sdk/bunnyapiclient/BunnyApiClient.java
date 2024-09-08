@@ -2,6 +2,7 @@ package bunny.sdk.bunnyapiclient;
 
 import bunny.sdk.bunnyapiclient.abusecase.AbusecaseRequestBuilder;
 import bunny.sdk.bunnyapiclient.apikey.ApikeyRequestBuilder;
+import bunny.sdk.bunnyapiclient.billing.BillingRequestBuilder;
 import bunny.sdk.bunnyapiclient.compute.ComputeRequestBuilder;
 import bunny.sdk.bunnyapiclient.country.CountryRequestBuilder;
 import bunny.sdk.bunnyapiclient.dmca.DmcaRequestBuilder;
@@ -9,6 +10,7 @@ import bunny.sdk.bunnyapiclient.dnszone.DnszoneRequestBuilder;
 import bunny.sdk.bunnyapiclient.pullzone.PullzoneRequestBuilder;
 import bunny.sdk.bunnyapiclient.purge.PurgeRequestBuilder;
 import bunny.sdk.bunnyapiclient.region.RegionRequestBuilder;
+import bunny.sdk.bunnyapiclient.search.SearchRequestBuilder;
 import bunny.sdk.bunnyapiclient.statistics.StatisticsRequestBuilder;
 import bunny.sdk.bunnyapiclient.storagezone.StoragezoneRequestBuilder;
 import bunny.sdk.bunnyapiclient.user.UserRequestBuilder;
@@ -47,6 +49,14 @@ public class BunnyApiClient extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public ApikeyRequestBuilder apikey() {
         return new ApikeyRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The billing property
+     * @return a {@link BillingRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public BillingRequestBuilder billing() {
+        return new BillingRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The compute property
@@ -103,6 +113,14 @@ public class BunnyApiClient extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RegionRequestBuilder region() {
         return new RegionRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The search property
+     * @return a {@link SearchRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public SearchRequestBuilder search() {
+        return new SearchRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The statistics property

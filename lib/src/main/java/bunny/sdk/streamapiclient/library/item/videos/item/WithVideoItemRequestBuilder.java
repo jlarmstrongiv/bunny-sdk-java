@@ -5,6 +5,7 @@ import bunny.sdk.streamapiclient.library.item.videos.item.heatmap.HeatmapRequest
 import bunny.sdk.streamapiclient.library.item.videos.item.play.PlayRequestBuilder;
 import bunny.sdk.streamapiclient.library.item.videos.item.reencode.ReencodeRequestBuilder;
 import bunny.sdk.streamapiclient.library.item.videos.item.repackage.RepackageRequestBuilder;
+import bunny.sdk.streamapiclient.library.item.videos.item.resolutions.ResolutionsRequestBuilder;
 import bunny.sdk.streamapiclient.library.item.videos.item.thumbnail.ThumbnailRequestBuilder;
 import bunny.sdk.streamapiclient.library.item.videos.item.transcribe.TranscribeRequestBuilder;
 import bunny.sdk.streamapiclient.models.managevideos.Video;
@@ -68,6 +69,14 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RepackageRequestBuilder repackage() {
         return new RepackageRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The resolutions property
+     * @return a {@link ResolutionsRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public ResolutionsRequestBuilder resolutions() {
+        return new ResolutionsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The thumbnail property

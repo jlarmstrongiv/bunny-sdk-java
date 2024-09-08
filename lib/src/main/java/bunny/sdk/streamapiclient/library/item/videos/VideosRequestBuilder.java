@@ -157,7 +157,7 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
         @jakarta.annotation.Nullable
-        public String collection;
+        public String collectionEscaped;
         @jakarta.annotation.Nullable
         public Integer itemsPerPage;
         @jakarta.annotation.Nullable
@@ -174,7 +174,7 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
             allQueryParams.put("orderBy", orderBy);
-            allQueryParams.put("collection", collection);
+            allQueryParams.put("collectionEscaped", collectionEscaped);
             allQueryParams.put("itemsPerPage", itemsPerPage);
             allQueryParams.put("page", page);
             allQueryParams.put("search", search);

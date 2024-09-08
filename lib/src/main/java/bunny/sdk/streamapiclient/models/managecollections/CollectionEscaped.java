@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class Collection implements AdditionalDataHolder, Parsable {
+public class CollectionEscaped implements AdditionalDataHolder, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -42,20 +42,20 @@ public class Collection implements AdditionalDataHolder, Parsable {
      */
     private Long videoLibraryId;
     /**
-     * Instantiates a new {@link Collection} and sets the default values.
+     * Instantiates a new {@link CollectionEscaped} and sets the default values.
      */
-    public Collection() {
+    public CollectionEscaped() {
         this.setAdditionalData(new HashMap<>());
     }
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link Collection}
+     * @return a {@link CollectionEscaped}
      */
     @jakarta.annotation.Nonnull
-    public static Collection createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static CollectionEscaped createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new Collection();
+        return new CollectionEscaped();
     }
     /**
      * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.

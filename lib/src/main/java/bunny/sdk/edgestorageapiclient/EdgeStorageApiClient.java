@@ -22,7 +22,7 @@ import java.util.Objects;
 public class EdgeStorageApiClient extends BaseRequestBuilder {
     /**
      * Gets an item from the bunny.sdk.EdgeStorageApiClient.item collection
-     * @param storageZoneName the name of your storage zone where you are connecting to.
+     * @param storageZoneName The name of your storage zone where you are connecting to.
      * @return a {@link WithStorageZoneNameItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

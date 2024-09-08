@@ -1,6 +1,6 @@
 package bunny.sdk.streamapiclient.library.item.collections.item;
 
-import bunny.sdk.streamapiclient.models.managecollections.Collection;
+import bunny.sdk.streamapiclient.models.managecollections.CollectionEscaped;
 import bunny.sdk.streamapiclient.models.StructuredSuccessResponse;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -11,7 +11,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-// import java.util.Collection;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -56,21 +56,21 @@ public class WithCollectionItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * [GetCollection API Docs](https://docs.bunny.net/reference/collection_getcollection)
-     * @return a {@link Collection}
+     * @return a {@link CollectionEscaped}
      */
     @jakarta.annotation.Nullable
-    public Collection get() {
+    public CollectionEscaped get() {
         return get(null);
     }
     /**
      * [GetCollection API Docs](https://docs.bunny.net/reference/collection_getcollection)
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link Collection}
+     * @return a {@link CollectionEscaped}
      */
     @jakarta.annotation.Nullable
-    public Collection get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    public CollectionEscaped get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Collection::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, CollectionEscaped::createFromDiscriminatorValue);
     }
     /**
      * [UpdateCollection API Docs](https://docs.bunny.net/reference/collection_updatecollection)
@@ -78,7 +78,7 @@ public class WithCollectionItemRequestBuilder extends BaseRequestBuilder {
      * @return a {@link StructuredSuccessResponse}
      */
     @jakarta.annotation.Nullable
-    public StructuredSuccessResponse post(@jakarta.annotation.Nonnull final Collection body) {
+    public StructuredSuccessResponse post(@jakarta.annotation.Nonnull final CollectionEscaped body) {
         return post(body, null);
     }
     /**
@@ -88,7 +88,7 @@ public class WithCollectionItemRequestBuilder extends BaseRequestBuilder {
      * @return a {@link StructuredSuccessResponse}
      */
     @jakarta.annotation.Nullable
-    public StructuredSuccessResponse post(@jakarta.annotation.Nonnull final Collection body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public StructuredSuccessResponse post(@jakarta.annotation.Nonnull final CollectionEscaped body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, StructuredSuccessResponse::createFromDiscriminatorValue);
@@ -139,7 +139,7 @@ public class WithCollectionItemRequestBuilder extends BaseRequestBuilder {
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final Collection body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CollectionEscaped body) {
         return toPostRequestInformation(body, null);
     }
     /**
@@ -149,7 +149,7 @@ public class WithCollectionItemRequestBuilder extends BaseRequestBuilder {
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final Collection body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CollectionEscaped body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, "{+baseurl}/library/{libraryId}/collections/{collectionId}", pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

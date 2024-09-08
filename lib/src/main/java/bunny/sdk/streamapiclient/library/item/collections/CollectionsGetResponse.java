@@ -1,6 +1,6 @@
 package bunny.sdk.streamapiclient.library.item.collections;
 
-import bunny.sdk.streamapiclient.models.managecollections.Collection;
+import bunny.sdk.streamapiclient.models.managecollections.CollectionEscaped;
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
@@ -21,7 +21,7 @@ public class CollectionsGetResponse implements AdditionalDataHolder, Parsable {
     /**
      * The items property
      */
-    private java.util.List<Collection> items;
+    private java.util.List<CollectionEscaped> items;
     /**
      * The itemsPerPage property
      */
@@ -70,17 +70,17 @@ public class CollectionsGetResponse implements AdditionalDataHolder, Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("currentPage", (n) -> { this.setCurrentPage(n.getIntegerValue()); });
-        deserializerMap.put("items", (n) -> { this.setItems(n.getCollectionOfObjectValues(Collection::createFromDiscriminatorValue)); });
+        deserializerMap.put("items", (n) -> { this.setItems(n.getCollectionOfObjectValues(CollectionEscaped::createFromDiscriminatorValue)); });
         deserializerMap.put("itemsPerPage", (n) -> { this.setItemsPerPage(n.getIntegerValue()); });
         deserializerMap.put("totalItems", (n) -> { this.setTotalItems(n.getIntegerValue()); });
         return deserializerMap;
     }
     /**
      * Gets the items property value. The items property
-     * @return a {@link java.util.List<Collection>}
+     * @return a {@link java.util.List<CollectionEscaped>}
      */
     @jakarta.annotation.Nullable
-    public java.util.List<Collection> getItems() {
+    public java.util.List<CollectionEscaped> getItems() {
         return this.items;
     }
     /**
@@ -129,7 +129,7 @@ public class CollectionsGetResponse implements AdditionalDataHolder, Parsable {
      * Sets the items property value. The items property
      * @param value Value to set for the items property.
      */
-    public void setItems(@jakarta.annotation.Nullable final java.util.List<Collection> value) {
+    public void setItems(@jakarta.annotation.Nullable final java.util.List<CollectionEscaped> value) {
         this.items = value;
     }
     /**
