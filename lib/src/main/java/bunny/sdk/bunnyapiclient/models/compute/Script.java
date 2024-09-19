@@ -28,6 +28,10 @@ public class Script implements AdditionalDataHolder, Parsable {
      */
     private Boolean deleted;
     /**
+     * The DeploymentKey property
+     */
+    private String deploymentKey;
+    /**
      * The EdgeScriptVariables property
      */
     private java.util.List<EdgeScriptVariable> edgeScriptVariables;
@@ -35,6 +39,10 @@ public class Script implements AdditionalDataHolder, Parsable {
      * The Id property
      */
     private Long id;
+    /**
+     * The IntegrationEnabled property
+     */
+    private Boolean integrationEnabled;
     /**
      * The LastModified property
      */
@@ -104,6 +112,14 @@ public class Script implements AdditionalDataHolder, Parsable {
         return this.deleted;
     }
     /**
+     * Gets the DeploymentKey property value. The DeploymentKey property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getDeploymentKey() {
+        return this.deploymentKey;
+    }
+    /**
      * Gets the EdgeScriptVariables property value. The EdgeScriptVariables property
      * @return a {@link java.util.List<EdgeScriptVariable>}
      */
@@ -117,12 +133,14 @@ public class Script implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(12);
         deserializerMap.put("CurrentReleaseId", (n) -> { this.setCurrentReleaseId(n.getLongValue()); });
         deserializerMap.put("DefaultHostname", (n) -> { this.setDefaultHostname(n.getStringValue()); });
         deserializerMap.put("Deleted", (n) -> { this.setDeleted(n.getBooleanValue()); });
+        deserializerMap.put("DeploymentKey", (n) -> { this.setDeploymentKey(n.getStringValue()); });
         deserializerMap.put("EdgeScriptVariables", (n) -> { this.setEdgeScriptVariables(n.getCollectionOfObjectValues(EdgeScriptVariable::createFromDiscriminatorValue)); });
         deserializerMap.put("Id", (n) -> { this.setId(n.getLongValue()); });
+        deserializerMap.put("IntegrationEnabled", (n) -> { this.setIntegrationEnabled(n.getBooleanValue()); });
         deserializerMap.put("LastModified", (n) -> { this.setLastModified(n.getOffsetDateTimeValue()); });
         deserializerMap.put("LinkedPullZones", (n) -> { this.setLinkedPullZones(n.getCollectionOfObjectValues(PullZone::createFromDiscriminatorValue)); });
         deserializerMap.put("Name", (n) -> { this.setName(n.getStringValue()); });
@@ -137,6 +155,14 @@ public class Script implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public Long getId() {
         return this.id;
+    }
+    /**
+     * Gets the IntegrationEnabled property value. The IntegrationEnabled property
+     * @return a {@link Boolean}
+     */
+    @jakarta.annotation.Nullable
+    public Boolean getIntegrationEnabled() {
+        return this.integrationEnabled;
     }
     /**
      * Gets the LastModified property value. The LastModified property
@@ -217,6 +243,13 @@ public class Script implements AdditionalDataHolder, Parsable {
         this.deleted = value;
     }
     /**
+     * Sets the DeploymentKey property value. The DeploymentKey property
+     * @param value Value to set for the DeploymentKey property.
+     */
+    public void setDeploymentKey(@jakarta.annotation.Nullable final String value) {
+        this.deploymentKey = value;
+    }
+    /**
      * Sets the EdgeScriptVariables property value. The EdgeScriptVariables property
      * @param value Value to set for the EdgeScriptVariables property.
      */
@@ -229,6 +262,13 @@ public class Script implements AdditionalDataHolder, Parsable {
      */
     public void setId(@jakarta.annotation.Nullable final Long value) {
         this.id = value;
+    }
+    /**
+     * Sets the IntegrationEnabled property value. The IntegrationEnabled property
+     * @param value Value to set for the IntegrationEnabled property.
+     */
+    public void setIntegrationEnabled(@jakarta.annotation.Nullable final Boolean value) {
+        this.integrationEnabled = value;
     }
     /**
      * Sets the LastModified property value. The LastModified property

@@ -39,7 +39,7 @@ public class ScriptRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public ScriptRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/compute/script?page={page}&perPage={perPage}&search={search}", pathParameters);
+        super(requestAdapter, "{+baseurl}/compute/script?page={page}&perPage={perPage}&search={search}{&includeLinkedPullZones}", pathParameters);
     }
     /**
      * Instantiates a new {@link ScriptRequestBuilder} and sets the default values.
@@ -47,7 +47,7 @@ public class ScriptRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public ScriptRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/compute/script?page={page}&perPage={perPage}&search={search}", rawUrl);
+        super(requestAdapter, "{+baseurl}/compute/script?page={page}&perPage={perPage}&search={search}{&includeLinkedPullZones}", rawUrl);
     }
     /**
      * [ListComputeScripts API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_index)
@@ -148,6 +148,8 @@ public class ScriptRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
         @jakarta.annotation.Nullable
+        public Boolean includeLinkedPullZones;
+        @jakarta.annotation.Nullable
         public Integer page;
         @jakarta.annotation.Nullable
         public Integer perPage;
@@ -163,6 +165,7 @@ public class ScriptRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("includeLinkedPullZones", includeLinkedPullZones);
             allQueryParams.put("page", page);
             allQueryParams.put("perPage", perPage);
             allQueryParams.put("search", search);
