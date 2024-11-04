@@ -1,6 +1,7 @@
 package bunny.sdk.edgestorageapiclient;
 
 import bunny.sdk.edgestorageapiclient.item.WithStorageZoneNameItemRequestBuilder;
+import bunny.sdk.edgestorageapiclient.item.WithStorageZoneNameSlashRequestBuilder;
 import com.microsoft.kiota.ApiClientBuilder;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
@@ -22,7 +23,7 @@ import java.util.Objects;
 public class EdgeStorageApiClient extends BaseRequestBuilder {
     /**
      * Gets an item from the bunny.sdk.EdgeStorageApiClient.item collection
-     * @param storageZoneName The name of your storage zone where you are connecting to.
+     * @param storageZoneName the name of your storage zone where you are connecting to.
      * @return a {@link WithStorageZoneNameItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -50,5 +51,15 @@ public class EdgeStorageApiClient extends BaseRequestBuilder {
             requestAdapter.setBaseUrl("https://{region}.bunnycdn.com");
         }
         pathParameters.put("baseurl", requestAdapter.getBaseUrl());
+    }
+    /**
+     * Builds and executes requests for operations under /{storageZoneName}/
+     * @param storageZoneName The name of your storage zone where you are connecting to.
+     * @return a {@link WithStorageZoneNameSlashRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public WithStorageZoneNameSlashRequestBuilder withStorageZoneNameSlash(@jakarta.annotation.Nonnull final String storageZoneName) {
+        Objects.requireNonNull(storageZoneName);
+        return new WithStorageZoneNameSlashRequestBuilder(pathParameters, requestAdapter, storageZoneName);
     }
 }

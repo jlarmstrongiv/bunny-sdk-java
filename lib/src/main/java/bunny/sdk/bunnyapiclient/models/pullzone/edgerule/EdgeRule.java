@@ -18,6 +18,10 @@ public class EdgeRule implements AdditionalDataHolder, Parsable {
      */
     private String actionParameter2;
     /**
+     * The Action parameter 3. The value depends on other parameters of the edge rule.
+     */
+    private String actionParameter3;
+    /**
      * The ActionType property
      */
     private Double actionType;
@@ -41,6 +45,10 @@ public class EdgeRule implements AdditionalDataHolder, Parsable {
      * The unique GUID of the edge rule
      */
     private String guid;
+    /**
+     * The OrderIndex property
+     */
+    private Integer orderIndex;
     /**
      * The TriggerMatchingType property
      */
@@ -80,6 +88,14 @@ public class EdgeRule implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public String getActionParameter2() {
         return this.actionParameter2;
+    }
+    /**
+     * Gets the ActionParameter3 property value. The Action parameter 3. The value depends on other parameters of the edge rule.
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getActionParameter3() {
+        return this.actionParameter3;
     }
     /**
      * Gets the ActionType property value. The ActionType property
@@ -127,14 +143,16 @@ public class EdgeRule implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(11);
         deserializerMap.put("ActionParameter1", (n) -> { this.setActionParameter1(n.getStringValue()); });
         deserializerMap.put("ActionParameter2", (n) -> { this.setActionParameter2(n.getStringValue()); });
+        deserializerMap.put("ActionParameter3", (n) -> { this.setActionParameter3(n.getStringValue()); });
         deserializerMap.put("ActionType", (n) -> { this.setActionType(n.getDoubleValue()); });
         deserializerMap.put("Description", (n) -> { this.setDescription(n.getStringValue()); });
         deserializerMap.put("Enabled", (n) -> { this.setEnabled(n.getBooleanValue()); });
         deserializerMap.put("ExtraActions", (n) -> { this.setExtraActions(n.getCollectionOfObjectValues(Action::createFromDiscriminatorValue)); });
         deserializerMap.put("Guid", (n) -> { this.setGuid(n.getStringValue()); });
+        deserializerMap.put("OrderIndex", (n) -> { this.setOrderIndex(n.getIntegerValue()); });
         deserializerMap.put("TriggerMatchingType", (n) -> { this.setTriggerMatchingType(n.getDoubleValue()); });
         deserializerMap.put("Triggers", (n) -> { this.setTriggers(n.getCollectionOfObjectValues(Trigger::createFromDiscriminatorValue)); });
         return deserializerMap;
@@ -146,6 +164,14 @@ public class EdgeRule implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public String getGuid() {
         return this.guid;
+    }
+    /**
+     * Gets the OrderIndex property value. The OrderIndex property
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getOrderIndex() {
+        return this.orderIndex;
     }
     /**
      * Gets the TriggerMatchingType property value. The TriggerMatchingType property
@@ -171,11 +197,12 @@ public class EdgeRule implements AdditionalDataHolder, Parsable {
         Objects.requireNonNull(writer);
         writer.writeStringValue("ActionParameter1", this.getActionParameter1());
         writer.writeStringValue("ActionParameter2", this.getActionParameter2());
+        writer.writeStringValue("ActionParameter3", this.getActionParameter3());
         writer.writeDoubleValue("ActionType", this.getActionType());
         writer.writeStringValue("Description", this.getDescription());
         writer.writeBooleanValue("Enabled", this.getEnabled());
         writer.writeCollectionOfObjectValues("ExtraActions", this.getExtraActions());
-        writer.writeStringValue("Guid", this.getGuid());
+        writer.writeIntegerValue("OrderIndex", this.getOrderIndex());
         writer.writeDoubleValue("TriggerMatchingType", this.getTriggerMatchingType());
         writer.writeCollectionOfObjectValues("Triggers", this.getTriggers());
         writer.writeAdditionalData(this.getAdditionalData());
@@ -193,6 +220,13 @@ public class EdgeRule implements AdditionalDataHolder, Parsable {
      */
     public void setActionParameter2(@jakarta.annotation.Nullable final String value) {
         this.actionParameter2 = value;
+    }
+    /**
+     * Sets the ActionParameter3 property value. The Action parameter 3. The value depends on other parameters of the edge rule.
+     * @param value Value to set for the ActionParameter3 property.
+     */
+    public void setActionParameter3(@jakarta.annotation.Nullable final String value) {
+        this.actionParameter3 = value;
     }
     /**
      * Sets the ActionType property value. The ActionType property
@@ -235,6 +269,13 @@ public class EdgeRule implements AdditionalDataHolder, Parsable {
      */
     public void setGuid(@jakarta.annotation.Nullable final String value) {
         this.guid = value;
+    }
+    /**
+     * Sets the OrderIndex property value. The OrderIndex property
+     * @param value Value to set for the OrderIndex property.
+     */
+    public void setOrderIndex(@jakarta.annotation.Nullable final Integer value) {
+        this.orderIndex = value;
     }
     /**
      * Sets the TriggerMatchingType property value. The TriggerMatchingType property

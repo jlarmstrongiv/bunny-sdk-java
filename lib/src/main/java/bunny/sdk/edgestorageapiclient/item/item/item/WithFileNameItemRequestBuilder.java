@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /{storageZoneName}/{path}/{fileName}
+ * Builds and executes requests for operations under /{storageZoneName}/{+path}/{fileName}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithFileNameItemRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class WithFileNameItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithFileNameItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/{storageZoneName}/{path}/{fileName}", pathParameters);
+        super(requestAdapter, "{+baseurl}/{storageZoneName}/{+path}/{fileName}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithFileNameItemRequestBuilder} and sets the default values.
@@ -32,7 +32,7 @@ public class WithFileNameItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithFileNameItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/{storageZoneName}/{path}/{fileName}", rawUrl);
+        super(requestAdapter, "{+baseurl}/{storageZoneName}/{+path}/{fileName}", rawUrl);
     }
     /**
      * [DeleteFile API Docs](https://docs.bunny.net/reference/delete_-storagezonename-path-filename)

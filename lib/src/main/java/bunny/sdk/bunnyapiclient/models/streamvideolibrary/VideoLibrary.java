@@ -99,6 +99,14 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
      */
     private OffsetDateTime dateCreated;
     /**
+     * The DrmBasePriceOverride property
+     */
+    private Double drmBasePriceOverride;
+    /**
+     * The DrmCostPerLicenseOverride property
+     */
+    private Double drmCostPerLicenseOverride;
+    /**
      * The DrmVersion property
      */
     private Long drmVersion;
@@ -119,6 +127,10 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
      */
     private Boolean enableMP4Fallback;
     /**
+     * The EnableMultiAudioTrackSupport property
+     */
+    private Boolean enableMultiAudioTrackSupport;
+    /**
      * Determines if the automatic audio transcribing is currently enabled for this zone.
      */
     private Boolean enableTranscribing;
@@ -130,6 +142,10 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
      * Determines if automatic transcribing title generation is currently enabled.
      */
     private Boolean enableTranscribingTitleGeneration;
+    /**
+     * The EncodingTier property
+     */
+    private Integer encodingTier;
     /**
      * The captions font family.
      */
@@ -147,13 +163,33 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
      */
     private Long id;
     /**
+     * The JitEncodingEnabled property
+     */
+    private Boolean jitEncodingEnabled;
+    /**
      * Determines if the original video files should be stored after encoding
      */
     private Boolean keepOriginalFiles;
     /**
+     * The MonthlyChargesEnterpriseDrm property
+     */
+    private Double monthlyChargesEnterpriseDrm;
+    /**
+     * The MonthlyChargesPremiumEncoding property
+     */
+    private Double monthlyChargesPremiumEncoding;
+    /**
+     * The MonthlyChargesTranscribing property
+     */
+    private Double monthlyChargesTranscribing;
+    /**
      * The name of the Video Library.
      */
     private String name;
+    /**
+     * The OutputCodecs property
+     */
+    private String outputCodecs;
     /**
      * The key color of the player.
      */
@@ -162,6 +198,10 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
      * Determines if the player token authentication is enabled
      */
     private Boolean playerTokenAuthenticationEnabled;
+    /**
+     * The PremiumEncodingPriceOverride property
+     */
+    private Double premiumEncodingPriceOverride;
     /**
      * The ID of the connected underlying pull zone
      */
@@ -203,9 +243,17 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<String> transcribingCaptionLanguages;
     /**
+     * The TranscribingPriceOverride property
+     */
+    private Double transcribingPriceOverride;
+    /**
      * The UI language of the player
      */
     private String uILanguage;
+    /**
+     * The UseSeparateAudioStream property
+     */
+    private Boolean useSeparateAudioStream;
     /**
      * The URL of the VAST tag endpoint for advertising configuration
      */
@@ -435,6 +483,22 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         return this.dateCreated;
     }
     /**
+     * Gets the DrmBasePriceOverride property value. The DrmBasePriceOverride property
+     * @return a {@link Double}
+     */
+    @jakarta.annotation.Nullable
+    public Double getDrmBasePriceOverride() {
+        return this.drmBasePriceOverride;
+    }
+    /**
+     * Gets the DrmCostPerLicenseOverride property value. The DrmCostPerLicenseOverride property
+     * @return a {@link Double}
+     */
+    @jakarta.annotation.Nullable
+    public Double getDrmCostPerLicenseOverride() {
+        return this.drmCostPerLicenseOverride;
+    }
+    /**
      * Gets the DrmVersion property value. The DrmVersion property
      * @return a {@link Long}
      */
@@ -475,6 +539,14 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         return this.enableMP4Fallback;
     }
     /**
+     * Gets the EnableMultiAudioTrackSupport property value. The EnableMultiAudioTrackSupport property
+     * @return a {@link Boolean}
+     */
+    @jakarta.annotation.Nullable
+    public Boolean getEnableMultiAudioTrackSupport() {
+        return this.enableMultiAudioTrackSupport;
+    }
+    /**
      * Gets the EnableTranscribing property value. Determines if the automatic audio transcribing is currently enabled for this zone.
      * @return a {@link Boolean}
      */
@@ -499,12 +571,20 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         return this.enableTranscribingTitleGeneration;
     }
     /**
+     * Gets the EncodingTier property value. The EncodingTier property
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getEncodingTier() {
+        return this.encodingTier;
+    }
+    /**
      * The deserialization information for the current model
      * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(57);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(69);
         deserializerMap.put("AllowDirectPlay", (n) -> { this.setAllowDirectPlay(n.getBooleanValue()); });
         deserializerMap.put("AllowEarlyPlay", (n) -> { this.setAllowEarlyPlay(n.getBooleanValue()); });
         deserializerMap.put("AllowedReferrers", (n) -> { this.setAllowedReferrers(n.getCollectionOfPrimitiveValues(String.class)); });
@@ -526,22 +606,32 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         deserializerMap.put("Controls", (n) -> { this.setControls(n.getStringValue()); });
         deserializerMap.put("CustomHTML", (n) -> { this.setCustomHTML(n.getStringValue()); });
         deserializerMap.put("DateCreated", (n) -> { this.setDateCreated(n.getOffsetDateTimeValue()); });
+        deserializerMap.put("DrmBasePriceOverride", (n) -> { this.setDrmBasePriceOverride(n.getDoubleValue()); });
+        deserializerMap.put("DrmCostPerLicenseOverride", (n) -> { this.setDrmCostPerLicenseOverride(n.getDoubleValue()); });
         deserializerMap.put("DrmVersion", (n) -> { this.setDrmVersion(n.getLongValue()); });
         deserializerMap.put("EnableContentTagging", (n) -> { this.setEnableContentTagging(n.getBooleanValue()); });
         deserializerMap.put("EnabledResolutions", (n) -> { this.setEnabledResolutions(n.getStringValue()); });
         deserializerMap.put("EnableDRM", (n) -> { this.setEnableDRM(n.getBooleanValue()); });
         deserializerMap.put("EnableMP4Fallback", (n) -> { this.setEnableMP4Fallback(n.getBooleanValue()); });
+        deserializerMap.put("EnableMultiAudioTrackSupport", (n) -> { this.setEnableMultiAudioTrackSupport(n.getBooleanValue()); });
         deserializerMap.put("EnableTranscribing", (n) -> { this.setEnableTranscribing(n.getBooleanValue()); });
         deserializerMap.put("EnableTranscribingDescriptionGeneration", (n) -> { this.setEnableTranscribingDescriptionGeneration(n.getBooleanValue()); });
         deserializerMap.put("EnableTranscribingTitleGeneration", (n) -> { this.setEnableTranscribingTitleGeneration(n.getBooleanValue()); });
+        deserializerMap.put("EncodingTier", (n) -> { this.setEncodingTier(n.getIntegerValue()); });
         deserializerMap.put("FontFamily", (n) -> { this.setFontFamily(n.getStringValue()); });
         deserializerMap.put("GoogleWidevineDrm", (n) -> { this.setGoogleWidevineDrm(n.getObjectValue(VideoLibraryGoogleWidevineDrm::createFromDiscriminatorValue)); });
         deserializerMap.put("HasWatermark", (n) -> { this.setHasWatermark(n.getBooleanValue()); });
         deserializerMap.put("Id", (n) -> { this.setId(n.getLongValue()); });
+        deserializerMap.put("JitEncodingEnabled", (n) -> { this.setJitEncodingEnabled(n.getBooleanValue()); });
         deserializerMap.put("KeepOriginalFiles", (n) -> { this.setKeepOriginalFiles(n.getBooleanValue()); });
+        deserializerMap.put("MonthlyChargesEnterpriseDrm", (n) -> { this.setMonthlyChargesEnterpriseDrm(n.getDoubleValue()); });
+        deserializerMap.put("MonthlyChargesPremiumEncoding", (n) -> { this.setMonthlyChargesPremiumEncoding(n.getDoubleValue()); });
+        deserializerMap.put("MonthlyChargesTranscribing", (n) -> { this.setMonthlyChargesTranscribing(n.getDoubleValue()); });
         deserializerMap.put("Name", (n) -> { this.setName(n.getStringValue()); });
+        deserializerMap.put("OutputCodecs", (n) -> { this.setOutputCodecs(n.getStringValue()); });
         deserializerMap.put("PlayerKeyColor", (n) -> { this.setPlayerKeyColor(n.getStringValue()); });
         deserializerMap.put("PlayerTokenAuthenticationEnabled", (n) -> { this.setPlayerTokenAuthenticationEnabled(n.getBooleanValue()); });
+        deserializerMap.put("PremiumEncodingPriceOverride", (n) -> { this.setPremiumEncodingPriceOverride(n.getDoubleValue()); });
         deserializerMap.put("PullZoneId", (n) -> { this.setPullZoneId(n.getLongValue()); });
         deserializerMap.put("PullZoneType", (n) -> { this.setPullZoneType(n.getDoubleValue()); });
         deserializerMap.put("ReadOnlyApiKey", (n) -> { this.setReadOnlyApiKey(n.getStringValue()); });
@@ -552,7 +642,9 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         deserializerMap.put("StorageZoneId", (n) -> { this.setStorageZoneId(n.getLongValue()); });
         deserializerMap.put("TrafficUsage", (n) -> { this.setTrafficUsage(n.getLongValue()); });
         deserializerMap.put("TranscribingCaptionLanguages", (n) -> { this.setTranscribingCaptionLanguages(n.getCollectionOfPrimitiveValues(String.class)); });
+        deserializerMap.put("TranscribingPriceOverride", (n) -> { this.setTranscribingPriceOverride(n.getDoubleValue()); });
         deserializerMap.put("UILanguage", (n) -> { this.setUILanguage(n.getStringValue()); });
+        deserializerMap.put("UseSeparateAudioStream", (n) -> { this.setUseSeparateAudioStream(n.getBooleanValue()); });
         deserializerMap.put("VastTagUrl", (n) -> { this.setVastTagUrl(n.getStringValue()); });
         deserializerMap.put("ViAiPublisherId", (n) -> { this.setViAiPublisherId(n.getStringValue()); });
         deserializerMap.put("VideoCount", (n) -> { this.setVideoCount(n.getLongValue()); });
@@ -597,6 +689,14 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         return this.id;
     }
     /**
+     * Gets the JitEncodingEnabled property value. The JitEncodingEnabled property
+     * @return a {@link Boolean}
+     */
+    @jakarta.annotation.Nullable
+    public Boolean getJitEncodingEnabled() {
+        return this.jitEncodingEnabled;
+    }
+    /**
      * Gets the KeepOriginalFiles property value. Determines if the original video files should be stored after encoding
      * @return a {@link Boolean}
      */
@@ -605,12 +705,44 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         return this.keepOriginalFiles;
     }
     /**
+     * Gets the MonthlyChargesEnterpriseDrm property value. The MonthlyChargesEnterpriseDrm property
+     * @return a {@link Double}
+     */
+    @jakarta.annotation.Nullable
+    public Double getMonthlyChargesEnterpriseDrm() {
+        return this.monthlyChargesEnterpriseDrm;
+    }
+    /**
+     * Gets the MonthlyChargesPremiumEncoding property value. The MonthlyChargesPremiumEncoding property
+     * @return a {@link Double}
+     */
+    @jakarta.annotation.Nullable
+    public Double getMonthlyChargesPremiumEncoding() {
+        return this.monthlyChargesPremiumEncoding;
+    }
+    /**
+     * Gets the MonthlyChargesTranscribing property value. The MonthlyChargesTranscribing property
+     * @return a {@link Double}
+     */
+    @jakarta.annotation.Nullable
+    public Double getMonthlyChargesTranscribing() {
+        return this.monthlyChargesTranscribing;
+    }
+    /**
      * Gets the Name property value. The name of the Video Library.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
     public String getName() {
         return this.name;
+    }
+    /**
+     * Gets the OutputCodecs property value. The OutputCodecs property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getOutputCodecs() {
+        return this.outputCodecs;
     }
     /**
      * Gets the PlayerKeyColor property value. The key color of the player.
@@ -627,6 +759,14 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public Boolean getPlayerTokenAuthenticationEnabled() {
         return this.playerTokenAuthenticationEnabled;
+    }
+    /**
+     * Gets the PremiumEncodingPriceOverride property value. The PremiumEncodingPriceOverride property
+     * @return a {@link Double}
+     */
+    @jakarta.annotation.Nullable
+    public Double getPremiumEncodingPriceOverride() {
+        return this.premiumEncodingPriceOverride;
     }
     /**
      * Gets the PullZoneId property value. The ID of the connected underlying pull zone
@@ -709,12 +849,28 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         return this.transcribingCaptionLanguages;
     }
     /**
+     * Gets the TranscribingPriceOverride property value. The TranscribingPriceOverride property
+     * @return a {@link Double}
+     */
+    @jakarta.annotation.Nullable
+    public Double getTranscribingPriceOverride() {
+        return this.transcribingPriceOverride;
+    }
+    /**
      * Gets the UILanguage property value. The UI language of the player
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
     public String getUILanguage() {
         return this.uILanguage;
+    }
+    /**
+     * Gets the UseSeparateAudioStream property value. The UseSeparateAudioStream property
+     * @return a {@link Boolean}
+     */
+    @jakarta.annotation.Nullable
+    public Boolean getUseSeparateAudioStream() {
+        return this.useSeparateAudioStream;
     }
     /**
      * Gets the VastTagUrl property value. The URL of the VAST tag endpoint for advertising configuration
@@ -809,21 +965,34 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         writer.writeIntegerValue("CaptionsFontSize", this.getCaptionsFontSize());
         writer.writeStringValue("Controls", this.getControls());
         writer.writeStringValue("CustomHTML", this.getCustomHTML());
+        writer.writeDoubleValue("DrmBasePriceOverride", this.getDrmBasePriceOverride());
+        writer.writeDoubleValue("DrmCostPerLicenseOverride", this.getDrmCostPerLicenseOverride());
         writer.writeBooleanValue("EnableContentTagging", this.getEnableContentTagging());
         writer.writeStringValue("EnabledResolutions", this.getEnabledResolutions());
         writer.writeBooleanValue("EnableDRM", this.getEnableDRM());
         writer.writeBooleanValue("EnableMP4Fallback", this.getEnableMP4Fallback());
+        writer.writeBooleanValue("EnableMultiAudioTrackSupport", this.getEnableMultiAudioTrackSupport());
         writer.writeBooleanValue("EnableTranscribing", this.getEnableTranscribing());
         writer.writeBooleanValue("EnableTranscribingDescriptionGeneration", this.getEnableTranscribingDescriptionGeneration());
         writer.writeBooleanValue("EnableTranscribingTitleGeneration", this.getEnableTranscribingTitleGeneration());
+        writer.writeIntegerValue("EncodingTier", this.getEncodingTier());
         writer.writeStringValue("FontFamily", this.getFontFamily());
+        writer.writeBooleanValue("JitEncodingEnabled", this.getJitEncodingEnabled());
         writer.writeBooleanValue("KeepOriginalFiles", this.getKeepOriginalFiles());
+        writer.writeDoubleValue("MonthlyChargesEnterpriseDrm", this.getMonthlyChargesEnterpriseDrm());
+        writer.writeDoubleValue("MonthlyChargesPremiumEncoding", this.getMonthlyChargesPremiumEncoding());
+        writer.writeDoubleValue("MonthlyChargesTranscribing", this.getMonthlyChargesTranscribing());
         writer.writeStringValue("Name", this.getName());
+        writer.writeStringValue("OutputCodecs", this.getOutputCodecs());
         writer.writeStringValue("PlayerKeyColor", this.getPlayerKeyColor());
         writer.writeBooleanValue("PlayerTokenAuthenticationEnabled", this.getPlayerTokenAuthenticationEnabled());
+        writer.writeDoubleValue("PremiumEncodingPriceOverride", this.getPremiumEncodingPriceOverride());
+        writer.writeCollectionOfEnumValues("ReplicationRegions", this.getReplicationRegions());
         writer.writeBooleanValue("ShowHeatmap", this.getShowHeatmap());
         writer.writeCollectionOfPrimitiveValues("TranscribingCaptionLanguages", this.getTranscribingCaptionLanguages());
+        writer.writeDoubleValue("TranscribingPriceOverride", this.getTranscribingPriceOverride());
         writer.writeStringValue("UILanguage", this.getUILanguage());
+        writer.writeBooleanValue("UseSeparateAudioStream", this.getUseSeparateAudioStream());
         writer.writeStringValue("VastTagUrl", this.getVastTagUrl());
         writer.writeStringValue("ViAiPublisherId", this.getViAiPublisherId());
         writer.writeIntegerValue("WatermarkHeight", this.getWatermarkHeight());
@@ -988,6 +1157,20 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         this.dateCreated = value;
     }
     /**
+     * Sets the DrmBasePriceOverride property value. The DrmBasePriceOverride property
+     * @param value Value to set for the DrmBasePriceOverride property.
+     */
+    public void setDrmBasePriceOverride(@jakarta.annotation.Nullable final Double value) {
+        this.drmBasePriceOverride = value;
+    }
+    /**
+     * Sets the DrmCostPerLicenseOverride property value. The DrmCostPerLicenseOverride property
+     * @param value Value to set for the DrmCostPerLicenseOverride property.
+     */
+    public void setDrmCostPerLicenseOverride(@jakarta.annotation.Nullable final Double value) {
+        this.drmCostPerLicenseOverride = value;
+    }
+    /**
      * Sets the DrmVersion property value. The DrmVersion property
      * @param value Value to set for the DrmVersion property.
      */
@@ -1023,6 +1206,13 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         this.enableMP4Fallback = value;
     }
     /**
+     * Sets the EnableMultiAudioTrackSupport property value. The EnableMultiAudioTrackSupport property
+     * @param value Value to set for the EnableMultiAudioTrackSupport property.
+     */
+    public void setEnableMultiAudioTrackSupport(@jakarta.annotation.Nullable final Boolean value) {
+        this.enableMultiAudioTrackSupport = value;
+    }
+    /**
      * Sets the EnableTranscribing property value. Determines if the automatic audio transcribing is currently enabled for this zone.
      * @param value Value to set for the EnableTranscribing property.
      */
@@ -1042,6 +1232,13 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
      */
     public void setEnableTranscribingTitleGeneration(@jakarta.annotation.Nullable final Boolean value) {
         this.enableTranscribingTitleGeneration = value;
+    }
+    /**
+     * Sets the EncodingTier property value. The EncodingTier property
+     * @param value Value to set for the EncodingTier property.
+     */
+    public void setEncodingTier(@jakarta.annotation.Nullable final Integer value) {
+        this.encodingTier = value;
     }
     /**
      * Sets the FontFamily property value. The captions font family.
@@ -1072,6 +1269,13 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         this.id = value;
     }
     /**
+     * Sets the JitEncodingEnabled property value. The JitEncodingEnabled property
+     * @param value Value to set for the JitEncodingEnabled property.
+     */
+    public void setJitEncodingEnabled(@jakarta.annotation.Nullable final Boolean value) {
+        this.jitEncodingEnabled = value;
+    }
+    /**
      * Sets the KeepOriginalFiles property value. Determines if the original video files should be stored after encoding
      * @param value Value to set for the KeepOriginalFiles property.
      */
@@ -1079,11 +1283,39 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         this.keepOriginalFiles = value;
     }
     /**
+     * Sets the MonthlyChargesEnterpriseDrm property value. The MonthlyChargesEnterpriseDrm property
+     * @param value Value to set for the MonthlyChargesEnterpriseDrm property.
+     */
+    public void setMonthlyChargesEnterpriseDrm(@jakarta.annotation.Nullable final Double value) {
+        this.monthlyChargesEnterpriseDrm = value;
+    }
+    /**
+     * Sets the MonthlyChargesPremiumEncoding property value. The MonthlyChargesPremiumEncoding property
+     * @param value Value to set for the MonthlyChargesPremiumEncoding property.
+     */
+    public void setMonthlyChargesPremiumEncoding(@jakarta.annotation.Nullable final Double value) {
+        this.monthlyChargesPremiumEncoding = value;
+    }
+    /**
+     * Sets the MonthlyChargesTranscribing property value. The MonthlyChargesTranscribing property
+     * @param value Value to set for the MonthlyChargesTranscribing property.
+     */
+    public void setMonthlyChargesTranscribing(@jakarta.annotation.Nullable final Double value) {
+        this.monthlyChargesTranscribing = value;
+    }
+    /**
      * Sets the Name property value. The name of the Video Library.
      * @param value Value to set for the Name property.
      */
     public void setName(@jakarta.annotation.Nullable final String value) {
         this.name = value;
+    }
+    /**
+     * Sets the OutputCodecs property value. The OutputCodecs property
+     * @param value Value to set for the OutputCodecs property.
+     */
+    public void setOutputCodecs(@jakarta.annotation.Nullable final String value) {
+        this.outputCodecs = value;
     }
     /**
      * Sets the PlayerKeyColor property value. The key color of the player.
@@ -1098,6 +1330,13 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
      */
     public void setPlayerTokenAuthenticationEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.playerTokenAuthenticationEnabled = value;
+    }
+    /**
+     * Sets the PremiumEncodingPriceOverride property value. The PremiumEncodingPriceOverride property
+     * @param value Value to set for the PremiumEncodingPriceOverride property.
+     */
+    public void setPremiumEncodingPriceOverride(@jakarta.annotation.Nullable final Double value) {
+        this.premiumEncodingPriceOverride = value;
     }
     /**
      * Sets the PullZoneId property value. The ID of the connected underlying pull zone
@@ -1170,11 +1409,25 @@ public class VideoLibrary implements AdditionalDataHolder, Parsable {
         this.transcribingCaptionLanguages = value;
     }
     /**
+     * Sets the TranscribingPriceOverride property value. The TranscribingPriceOverride property
+     * @param value Value to set for the TranscribingPriceOverride property.
+     */
+    public void setTranscribingPriceOverride(@jakarta.annotation.Nullable final Double value) {
+        this.transcribingPriceOverride = value;
+    }
+    /**
      * Sets the UILanguage property value. The UI language of the player
      * @param value Value to set for the UILanguage property.
      */
     public void setUILanguage(@jakarta.annotation.Nullable final String value) {
         this.uILanguage = value;
+    }
+    /**
+     * Sets the UseSeparateAudioStream property value. The UseSeparateAudioStream property
+     * @param value Value to set for the UseSeparateAudioStream property.
+     */
+    public void setUseSeparateAudioStream(@jakarta.annotation.Nullable final Boolean value) {
+        this.useSeparateAudioStream = value;
     }
     /**
      * Sets the VastTagUrl property value. The URL of the VAST tag endpoint for advertising configuration

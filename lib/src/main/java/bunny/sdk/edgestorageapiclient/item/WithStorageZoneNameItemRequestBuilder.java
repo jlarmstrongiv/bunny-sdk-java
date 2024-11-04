@@ -1,18 +1,10 @@
 package bunny.sdk.edgestorageapiclient.item;
 
 import bunny.sdk.edgestorageapiclient.item.item.WithPathItemRequestBuilder;
+import bunny.sdk.edgestorageapiclient.item.item.WithPathSlashRequestBuilder;
 import com.microsoft.kiota.BaseRequestBuilder;
-import com.microsoft.kiota.BaseRequestConfiguration;
-import com.microsoft.kiota.HttpMethod;
 import com.microsoft.kiota.RequestAdapter;
-import com.microsoft.kiota.RequestInformation;
-import com.microsoft.kiota.RequestOption;
-import com.microsoft.kiota.serialization.Parsable;
-import com.microsoft.kiota.serialization.ParsableFactory;
-import java.io.InputStream;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 /**
  * Builds and executes requests for operations under /{storageZoneName}
@@ -21,7 +13,7 @@ import java.util.Objects;
 public class WithStorageZoneNameItemRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the bunny.sdk.EdgeStorageApiClient.item.item collection
-     * @param path The directory path that you want to list.
+     * @param path Unique identifier of the item
      * @return a {@link WithPathItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -48,64 +40,13 @@ public class WithStorageZoneNameItemRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/{storageZoneName}", rawUrl);
     }
     /**
-     * [DownloadZip API Docs](https://toshy.github.io/BunnyNet-PHP/edge-storage-api/#download-zip)
-     * @param body The request body
-     * @return a {@link InputStream}
-     */
-    @jakarta.annotation.Nullable
-    public InputStream post(@jakarta.annotation.Nonnull final WithStorageZoneNamePostRequestBody body) {
-        return post(body, null);
-    }
-    /**
-     * [DownloadZip API Docs](https://toshy.github.io/BunnyNet-PHP/edge-storage-api/#download-zip)
-     * @param body The request body
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link InputStream}
-     */
-    @jakarta.annotation.Nullable
-    public InputStream post(@jakarta.annotation.Nonnull final WithStorageZoneNamePostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
-        Objects.requireNonNull(body);
-        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendPrimitive(requestInfo, null, InputStream.class);
-    }
-    /**
-     * [DownloadZip API Docs](https://toshy.github.io/BunnyNet-PHP/edge-storage-api/#download-zip)
-     * @param body The request body
-     * @return a {@link RequestInformation}
+     * Builds and executes requests for operations under /{storageZoneName}/{+path}/
+     * @param path The directory path that you want to list.
+     * @return a {@link WithPathSlashRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final WithStorageZoneNamePostRequestBody body) {
-        return toPostRequestInformation(body, null);
-    }
-    /**
-     * [DownloadZip API Docs](https://toshy.github.io/BunnyNet-PHP/edge-storage-api/#download-zip)
-     * @param body The request body
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link RequestInformation}
-     */
-    @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final WithStorageZoneNamePostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
-        Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
-        requestInfo.headers.tryAdd("Accept", "application/octet-stream");
-        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
-        return requestInfo;
-    }
-    /**
-     * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-     * @param rawUrl The raw URL to use for the request builder.
-     * @return a {@link WithStorageZoneNameItemRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public WithStorageZoneNameItemRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
-        Objects.requireNonNull(rawUrl);
-        return new WithStorageZoneNameItemRequestBuilder(rawUrl, requestAdapter);
-    }
-    /**
-     * Configuration for the request such as headers, query parameters, and middleware options.
-     */
-    @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class PostRequestConfiguration extends BaseRequestConfiguration {
+    public WithPathSlashRequestBuilder withPathSlash(@jakarta.annotation.Nonnull final String path) {
+        Objects.requireNonNull(path);
+        return new WithPathSlashRequestBuilder(pathParameters, requestAdapter, path);
     }
 }

@@ -90,6 +90,9 @@ public class TranscribeRequestBuilder extends BaseRequestBuilder {
     public class PostQueryParameters implements QueryParameters {
         @jakarta.annotation.Nullable
         public Boolean force;
+        /**
+         * Video source language, use ISO 639-1 language code
+         */
         @jakarta.annotation.Nullable
         public String language;
         /**

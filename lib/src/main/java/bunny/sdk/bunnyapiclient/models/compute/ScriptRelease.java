@@ -27,6 +27,10 @@ public class ScriptRelease implements AdditionalDataHolder, Parsable {
      */
     private String code;
     /**
+     * The CommitSha property
+     */
+    private String commitSha;
+    /**
      * The DatePublished property
      */
     private OffsetDateTime datePublished;
@@ -103,6 +107,14 @@ public class ScriptRelease implements AdditionalDataHolder, Parsable {
         return this.code;
     }
     /**
+     * Gets the CommitSha property value. The CommitSha property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getCommitSha() {
+        return this.commitSha;
+    }
+    /**
      * Gets the DatePublished property value. The DatePublished property
      * @return a {@link OffsetDateTime}
      */
@@ -132,10 +144,11 @@ public class ScriptRelease implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(11);
         deserializerMap.put("Author", (n) -> { this.setAuthor(n.getStringValue()); });
         deserializerMap.put("AuthorEmail", (n) -> { this.setAuthorEmail(n.getStringValue()); });
         deserializerMap.put("Code", (n) -> { this.setCode(n.getStringValue()); });
+        deserializerMap.put("CommitSha", (n) -> { this.setCommitSha(n.getStringValue()); });
         deserializerMap.put("DatePublished", (n) -> { this.setDatePublished(n.getOffsetDateTimeValue()); });
         deserializerMap.put("DateReleased", (n) -> { this.setDateReleased(n.getOffsetDateTimeValue()); });
         deserializerMap.put("Deleted", (n) -> { this.setDeleted(n.getBooleanValue()); });
@@ -186,6 +199,7 @@ public class ScriptRelease implements AdditionalDataHolder, Parsable {
         writer.writeStringValue("Author", this.getAuthor());
         writer.writeStringValue("AuthorEmail", this.getAuthorEmail());
         writer.writeStringValue("Code", this.getCode());
+        writer.writeStringValue("CommitSha", this.getCommitSha());
         writer.writeOffsetDateTimeValue("DatePublished", this.getDatePublished());
         writer.writeOffsetDateTimeValue("DateReleased", this.getDateReleased());
         writer.writeBooleanValue("Deleted", this.getDeleted());
@@ -222,6 +236,13 @@ public class ScriptRelease implements AdditionalDataHolder, Parsable {
      */
     public void setCode(@jakarta.annotation.Nullable final String value) {
         this.code = value;
+    }
+    /**
+     * Sets the CommitSha property value. The CommitSha property
+     * @param value Value to set for the CommitSha property.
+     */
+    public void setCommitSha(@jakarta.annotation.Nullable final String value) {
+        this.commitSha = value;
     }
     /**
      * Sets the DatePublished property value. The DatePublished property

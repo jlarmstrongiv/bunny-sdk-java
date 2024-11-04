@@ -1,4 +1,4 @@
-package bunny.sdk.bunnyapiclient.dnszone.item;
+package bunny.sdk.bunnyapiclient.models.dnszone;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;
@@ -7,11 +7,8 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-/**
- * The template for adding optional properties.
- */
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class PostRequestBody implements AdditionalDataHolder, Parsable {
+public class DnsZoneCreate implements AdditionalDataHolder, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -45,20 +42,20 @@ public class PostRequestBody implements AdditionalDataHolder, Parsable {
      */
     private String soaEmail;
     /**
-     * Instantiates a new {@link PostRequestBody} and sets the default values.
+     * Instantiates a new {@link DnsZoneCreate} and sets the default values.
      */
-    public PostRequestBody() {
+    public DnsZoneCreate() {
         this.setAdditionalData(new HashMap<>());
     }
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link PostRequestBody}
+     * @return a {@link DnsZoneCreate}
      */
     @jakarta.annotation.Nonnull
-    public static PostRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static DnsZoneCreate createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new PostRequestBody();
+        return new DnsZoneCreate();
     }
     /**
      * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.

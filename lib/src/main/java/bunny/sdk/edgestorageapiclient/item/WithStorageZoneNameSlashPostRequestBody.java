@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class WithStorageZoneNamePostRequestBody implements AdditionalDataHolder, Parsable {
+public class WithStorageZoneNameSlashPostRequestBody implements AdditionalDataHolder, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
@@ -22,20 +22,20 @@ public class WithStorageZoneNamePostRequestBody implements AdditionalDataHolder,
      */
     private String rootPath;
     /**
-     * Instantiates a new {@link WithStorageZoneNamePostRequestBody} and sets the default values.
+     * Instantiates a new {@link WithStorageZoneNameSlashPostRequestBody} and sets the default values.
      */
-    public WithStorageZoneNamePostRequestBody() {
+    public WithStorageZoneNameSlashPostRequestBody() {
         this.setAdditionalData(new HashMap<>());
     }
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link WithStorageZoneNamePostRequestBody}
+     * @return a {@link WithStorageZoneNameSlashPostRequestBody}
      */
     @jakarta.annotation.Nonnull
-    public static WithStorageZoneNamePostRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static WithStorageZoneNameSlashPostRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new WithStorageZoneNamePostRequestBody();
+        return new WithStorageZoneNameSlashPostRequestBody();
     }
     /**
      * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.

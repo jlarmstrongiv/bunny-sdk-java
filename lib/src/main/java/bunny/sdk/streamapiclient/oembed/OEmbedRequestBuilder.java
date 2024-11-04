@@ -24,7 +24,7 @@ public class OEmbedRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public OEmbedRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/OEmbed?expires={expires}{&maxHeight,maxWidth,token,url}", pathParameters);
+        super(requestAdapter, "{+baseurl}/OEmbed?expires={expires}&url={url}{&maxHeight,maxWidth,token}", pathParameters);
     }
     /**
      * Instantiates a new {@link OEmbedRequestBuilder} and sets the default values.
@@ -32,7 +32,7 @@ public class OEmbedRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public OEmbedRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/OEmbed?expires={expires}{&maxHeight,maxWidth,token,url}", rawUrl);
+        super(requestAdapter, "{+baseurl}/OEmbed?expires={expires}&url={url}{&maxHeight,maxWidth,token}", rawUrl);
     }
     /**
      * [OEmbed API Docs](https://docs.bunny.net/reference/oembed_getoembed)

@@ -18,7 +18,7 @@ public class WithMmWithDdWithYyRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      * @param yy The path parameter: yy
      */
-    public WithMmWithDdWithYyRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter, @jakarta.annotation.Nullable final Integer dd, @jakarta.annotation.Nullable final Integer mm, @jakarta.annotation.Nullable final Integer yy) {
+    public WithMmWithDdWithYyRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter, @jakarta.annotation.Nullable final String dd, @jakarta.annotation.Nullable final String mm, @jakarta.annotation.Nullable final String yy) {
         super(requestAdapter, "{+baseurl}/{mm}-{dd}-{yy}", pathParameters);
         this.pathParameters.put("dd", dd);
         this.pathParameters.put("mm", mm);

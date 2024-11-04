@@ -7,10 +7,12 @@ import bunny.sdk.bunnyapiclient.compute.ComputeRequestBuilder;
 import bunny.sdk.bunnyapiclient.country.CountryRequestBuilder;
 import bunny.sdk.bunnyapiclient.dmca.DmcaRequestBuilder;
 import bunny.sdk.bunnyapiclient.dnszone.DnszoneRequestBuilder;
+import bunny.sdk.bunnyapiclient.integration.IntegrationRequestBuilder;
 import bunny.sdk.bunnyapiclient.pullzone.PullzoneRequestBuilder;
 import bunny.sdk.bunnyapiclient.purge.PurgeRequestBuilder;
 import bunny.sdk.bunnyapiclient.region.RegionRequestBuilder;
 import bunny.sdk.bunnyapiclient.search.SearchRequestBuilder;
+import bunny.sdk.bunnyapiclient.shield.ShieldRequestBuilder;
 import bunny.sdk.bunnyapiclient.statistics.StatisticsRequestBuilder;
 import bunny.sdk.bunnyapiclient.storagezone.StoragezoneRequestBuilder;
 import bunny.sdk.bunnyapiclient.user.UserRequestBuilder;
@@ -91,6 +93,14 @@ public class BunnyApiClient extends BaseRequestBuilder {
         return new DnszoneRequestBuilder(pathParameters, requestAdapter);
     }
     /**
+     * The integration property
+     * @return a {@link IntegrationRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public IntegrationRequestBuilder integration() {
+        return new IntegrationRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
      * The pullzone property
      * @return a {@link PullzoneRequestBuilder}
      */
@@ -121,6 +131,14 @@ public class BunnyApiClient extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public SearchRequestBuilder search() {
         return new SearchRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The shield property
+     * @return a {@link ShieldRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public ShieldRequestBuilder shield() {
+        return new ShieldRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The statistics property

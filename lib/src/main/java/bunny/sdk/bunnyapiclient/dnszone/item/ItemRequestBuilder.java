@@ -7,6 +7,7 @@ import bunny.sdk.bunnyapiclient.dnszone.item.recheckdns.RecheckdnsRequestBuilder
 import bunny.sdk.bunnyapiclient.dnszone.item.records.RecordsRequestBuilder;
 import bunny.sdk.bunnyapiclient.dnszone.item.statistics.StatisticsRequestBuilder;
 import bunny.sdk.bunnyapiclient.models.dnszone.DnsZone;
+import bunny.sdk.bunnyapiclient.models.dnszone.DnsZoneCreate;
 import bunny.sdk.bunnyapiclient.models.StructuredBadRequestResponse;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -127,21 +128,21 @@ public class ItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * [UpdateDnsZone API Docs](https://docs.bunny.net/reference/dnszonepublic_update)
-     * @param body The template for adding optional properties.
+     * @param body The request body
      * @return a {@link DnsZone}
      */
     @jakarta.annotation.Nullable
-    public DnsZone post(@jakarta.annotation.Nonnull final PostRequestBody body) {
+    public DnsZone post(@jakarta.annotation.Nonnull final DnsZoneCreate body) {
         return post(body, null);
     }
     /**
      * [UpdateDnsZone API Docs](https://docs.bunny.net/reference/dnszonepublic_update)
-     * @param body The template for adding optional properties.
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link DnsZone}
      */
     @jakarta.annotation.Nullable
-    public DnsZone post(@jakarta.annotation.Nonnull final PostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public DnsZone post(@jakarta.annotation.Nonnull final DnsZoneCreate body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, DnsZone::createFromDiscriminatorValue);
@@ -188,21 +189,21 @@ public class ItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * [UpdateDnsZone API Docs](https://docs.bunny.net/reference/dnszonepublic_update)
-     * @param body The template for adding optional properties.
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PostRequestBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final DnsZoneCreate body) {
         return toPostRequestInformation(body, null);
     }
     /**
      * [UpdateDnsZone API Docs](https://docs.bunny.net/reference/dnszonepublic_update)
-     * @param body The template for adding optional properties.
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final DnsZoneCreate body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

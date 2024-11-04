@@ -35,6 +35,10 @@ public class User implements AdditionalDataHolder, Parsable {
      */
     private Double billingType;
     /**
+     * The CardVerified property
+     */
+    private Boolean cardVerified;
+    /**
      * The city of the user
      */
     private String city;
@@ -131,6 +135,10 @@ public class User implements AdditionalDataHolder, Parsable {
      */
     private Long totalBandwidthUsed;
     /**
+     * The TrialBalance property
+     */
+    private Double trialBalance;
+    /**
      * The total free trial bandwidth limit for this account
      */
     private Long trialBandwidthLimit;
@@ -213,6 +221,14 @@ public class User implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public Double getBillingType() {
         return this.billingType;
+    }
+    /**
+     * Gets the CardVerified property value. The CardVerified property
+     * @return a {@link Boolean}
+     */
+    @jakarta.annotation.Nullable
+    public Boolean getCardVerified() {
+        return this.cardVerified;
     }
     /**
      * Gets the City property value. The city of the user
@@ -308,12 +324,13 @@ public class User implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(34);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(36);
         deserializerMap.put("AccountId", (n) -> { this.setAccountId(n.getStringValue()); });
         deserializerMap.put("Balance", (n) -> { this.setBalance(n.getDoubleValue()); });
         deserializerMap.put("BillingEmail", (n) -> { this.setBillingEmail(n.getStringValue()); });
         deserializerMap.put("BillingFreeUntilDate", (n) -> { this.setBillingFreeUntilDate(n.getOffsetDateTimeValue()); });
         deserializerMap.put("BillingType", (n) -> { this.setBillingType(n.getDoubleValue()); });
+        deserializerMap.put("CardVerified", (n) -> { this.setCardVerified(n.getBooleanValue()); });
         deserializerMap.put("City", (n) -> { this.setCity(n.getStringValue()); });
         deserializerMap.put("CompanyName", (n) -> { this.setCompanyName(n.getStringValue()); });
         deserializerMap.put("Country", (n) -> { this.setCountry(n.getStringValue()); });
@@ -338,6 +355,7 @@ public class User implements AdditionalDataHolder, Parsable {
         deserializerMap.put("StreetAddress", (n) -> { this.setStreetAddress(n.getStringValue()); });
         deserializerMap.put("Suspended", (n) -> { this.setSuspended(n.getBooleanValue()); });
         deserializerMap.put("TotalBandwidthUsed", (n) -> { this.setTotalBandwidthUsed(n.getLongValue()); });
+        deserializerMap.put("TrialBalance", (n) -> { this.setTrialBalance(n.getDoubleValue()); });
         deserializerMap.put("TrialBandwidthLimit", (n) -> { this.setTrialBandwidthLimit(n.getLongValue()); });
         deserializerMap.put("TwoFactorAuthenticationEnabled", (n) -> { this.setTwoFactorAuthenticationEnabled(n.getBooleanValue()); });
         deserializerMap.put("UnreadSupportTicketCount", (n) -> { this.setUnreadSupportTicketCount(n.getIntegerValue()); });
@@ -450,6 +468,14 @@ public class User implements AdditionalDataHolder, Parsable {
         return this.totalBandwidthUsed;
     }
     /**
+     * Gets the TrialBalance property value. The TrialBalance property
+     * @return a {@link Double}
+     */
+    @jakarta.annotation.Nullable
+    public Double getTrialBalance() {
+        return this.trialBalance;
+    }
+    /**
      * Gets the TrialBandwidthLimit property value. The total free trial bandwidth limit for this account
      * @return a {@link Long}
      */
@@ -500,6 +526,7 @@ public class User implements AdditionalDataHolder, Parsable {
         writer.writeStringValue("BillingEmail", this.getBillingEmail());
         writer.writeOffsetDateTimeValue("BillingFreeUntilDate", this.getBillingFreeUntilDate());
         writer.writeDoubleValue("BillingType", this.getBillingType());
+        writer.writeBooleanValue("CardVerified", this.getCardVerified());
         writer.writeStringValue("City", this.getCity());
         writer.writeStringValue("CompanyName", this.getCompanyName());
         writer.writeStringValue("Country", this.getCountry());
@@ -524,6 +551,7 @@ public class User implements AdditionalDataHolder, Parsable {
         writer.writeStringValue("StreetAddress", this.getStreetAddress());
         writer.writeBooleanValue("Suspended", this.getSuspended());
         writer.writeLongValue("TotalBandwidthUsed", this.getTotalBandwidthUsed());
+        writer.writeDoubleValue("TrialBalance", this.getTrialBalance());
         writer.writeLongValue("TrialBandwidthLimit", this.getTrialBandwidthLimit());
         writer.writeBooleanValue("TwoFactorAuthenticationEnabled", this.getTwoFactorAuthenticationEnabled());
         writer.writeIntegerValue("UnreadSupportTicketCount", this.getUnreadSupportTicketCount());
@@ -572,6 +600,13 @@ public class User implements AdditionalDataHolder, Parsable {
      */
     public void setBillingType(@jakarta.annotation.Nullable final Double value) {
         this.billingType = value;
+    }
+    /**
+     * Sets the CardVerified property value. The CardVerified property
+     * @param value Value to set for the CardVerified property.
+     */
+    public void setCardVerified(@jakarta.annotation.Nullable final Boolean value) {
+        this.cardVerified = value;
     }
     /**
      * Sets the City property value. The city of the user
@@ -740,6 +775,13 @@ public class User implements AdditionalDataHolder, Parsable {
      */
     public void setTotalBandwidthUsed(@jakarta.annotation.Nullable final Long value) {
         this.totalBandwidthUsed = value;
+    }
+    /**
+     * Sets the TrialBalance property value. The TrialBalance property
+     * @param value Value to set for the TrialBalance property.
+     */
+    public void setTrialBalance(@jakarta.annotation.Nullable final Double value) {
+        this.trialBalance = value;
     }
     /**
      * Sets the TrialBandwidthLimit property value. The total free trial bandwidth limit for this account

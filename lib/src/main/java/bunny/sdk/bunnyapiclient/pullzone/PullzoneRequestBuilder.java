@@ -5,6 +5,8 @@ import bunny.sdk.bunnyapiclient.models.pullzone.PullZoneCreate;
 import bunny.sdk.bunnyapiclient.pullzone.checkavailability.CheckavailabilityRequestBuilder;
 import bunny.sdk.bunnyapiclient.pullzone.item.ItemRequestBuilder;
 import bunny.sdk.bunnyapiclient.pullzone.loadfreecertificate.LoadFreeCertificateRequestBuilder;
+import bunny.sdk.bunnyapiclient.pullzone.setzonesecurityenabled.SetZoneSecurityEnabledRequestBuilder;
+import bunny.sdk.bunnyapiclient.pullzone.setzonesecurityincludehashremoteipenabled.SetZoneSecurityIncludeHashRemoteIPEnabledRequestBuilder;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
@@ -38,6 +40,22 @@ public class PullzoneRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public LoadFreeCertificateRequestBuilder loadFreeCertificate() {
         return new LoadFreeCertificateRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The setZoneSecurityEnabled property
+     * @return a {@link SetZoneSecurityEnabledRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public SetZoneSecurityEnabledRequestBuilder setZoneSecurityEnabled() {
+        return new SetZoneSecurityEnabledRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The setZoneSecurityIncludeHashRemoteIPEnabled property
+     * @return a {@link SetZoneSecurityIncludeHashRemoteIPEnabledRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public SetZoneSecurityIncludeHashRemoteIPEnabledRequestBuilder setZoneSecurityIncludeHashRemoteIPEnabled() {
+        return new SetZoneSecurityIncludeHashRemoteIPEnabledRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Gets an item from the bunny.sdk.BunnyApiClient.pullzone.item collection

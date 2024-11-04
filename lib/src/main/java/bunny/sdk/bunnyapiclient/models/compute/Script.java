@@ -1,6 +1,5 @@
 package bunny.sdk.bunnyapiclient.models.compute;
 
-import bunny.sdk.bunnyapiclient.models.pullzone.PullZone;
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
@@ -40,9 +39,13 @@ public class Script implements AdditionalDataHolder, Parsable {
      */
     private Long id;
     /**
-     * The IntegrationEnabled property
+     * The Integration property
      */
-    private Boolean integrationEnabled;
+    private Integration integration;
+    /**
+     * The IntegrationId property
+     */
+    private Long integrationId;
     /**
      * The LastModified property
      */
@@ -50,11 +53,27 @@ public class Script implements AdditionalDataHolder, Parsable {
     /**
      * The LinkedPullZones property
      */
-    private java.util.List<PullZone> linkedPullZones;
+    private java.util.List<LinkedPullZone> linkedPullZones;
+    /**
+     * The MonthlyCost property
+     */
+    private Double monthlyCost;
+    /**
+     * The MonthlyCpuTime property
+     */
+    private Integer monthlyCpuTime;
+    /**
+     * The MonthlyRequestCount property
+     */
+    private Integer monthlyRequestCount;
     /**
      * The Name property
      */
     private String name;
+    /**
+     * The RepositoryId property
+     */
+    private Long repositoryId;
     /**
      * The ScriptType property
      */
@@ -133,17 +152,22 @@ public class Script implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(12);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(17);
         deserializerMap.put("CurrentReleaseId", (n) -> { this.setCurrentReleaseId(n.getLongValue()); });
         deserializerMap.put("DefaultHostname", (n) -> { this.setDefaultHostname(n.getStringValue()); });
         deserializerMap.put("Deleted", (n) -> { this.setDeleted(n.getBooleanValue()); });
         deserializerMap.put("DeploymentKey", (n) -> { this.setDeploymentKey(n.getStringValue()); });
         deserializerMap.put("EdgeScriptVariables", (n) -> { this.setEdgeScriptVariables(n.getCollectionOfObjectValues(EdgeScriptVariable::createFromDiscriminatorValue)); });
         deserializerMap.put("Id", (n) -> { this.setId(n.getLongValue()); });
-        deserializerMap.put("IntegrationEnabled", (n) -> { this.setIntegrationEnabled(n.getBooleanValue()); });
+        deserializerMap.put("Integration", (n) -> { this.setIntegration(n.getObjectValue(Integration::createFromDiscriminatorValue)); });
+        deserializerMap.put("IntegrationId", (n) -> { this.setIntegrationId(n.getLongValue()); });
         deserializerMap.put("LastModified", (n) -> { this.setLastModified(n.getOffsetDateTimeValue()); });
-        deserializerMap.put("LinkedPullZones", (n) -> { this.setLinkedPullZones(n.getCollectionOfObjectValues(PullZone::createFromDiscriminatorValue)); });
+        deserializerMap.put("LinkedPullZones", (n) -> { this.setLinkedPullZones(n.getCollectionOfObjectValues(LinkedPullZone::createFromDiscriminatorValue)); });
+        deserializerMap.put("MonthlyCost", (n) -> { this.setMonthlyCost(n.getDoubleValue()); });
+        deserializerMap.put("MonthlyCpuTime", (n) -> { this.setMonthlyCpuTime(n.getIntegerValue()); });
+        deserializerMap.put("MonthlyRequestCount", (n) -> { this.setMonthlyRequestCount(n.getIntegerValue()); });
         deserializerMap.put("Name", (n) -> { this.setName(n.getStringValue()); });
+        deserializerMap.put("RepositoryId", (n) -> { this.setRepositoryId(n.getLongValue()); });
         deserializerMap.put("ScriptType", (n) -> { this.setScriptType(n.getDoubleValue()); });
         deserializerMap.put("SystemHostname", (n) -> { this.setSystemHostname(n.getStringValue()); });
         return deserializerMap;
@@ -157,12 +181,20 @@ public class Script implements AdditionalDataHolder, Parsable {
         return this.id;
     }
     /**
-     * Gets the IntegrationEnabled property value. The IntegrationEnabled property
-     * @return a {@link Boolean}
+     * Gets the Integration property value. The Integration property
+     * @return a {@link Integration}
      */
     @jakarta.annotation.Nullable
-    public Boolean getIntegrationEnabled() {
-        return this.integrationEnabled;
+    public Integration getIntegration() {
+        return this.integration;
+    }
+    /**
+     * Gets the IntegrationId property value. The IntegrationId property
+     * @return a {@link Long}
+     */
+    @jakarta.annotation.Nullable
+    public Long getIntegrationId() {
+        return this.integrationId;
     }
     /**
      * Gets the LastModified property value. The LastModified property
@@ -174,11 +206,35 @@ public class Script implements AdditionalDataHolder, Parsable {
     }
     /**
      * Gets the LinkedPullZones property value. The LinkedPullZones property
-     * @return a {@link java.util.List<PullZone>}
+     * @return a {@link java.util.List<LinkedPullZone>}
      */
     @jakarta.annotation.Nullable
-    public java.util.List<PullZone> getLinkedPullZones() {
+    public java.util.List<LinkedPullZone> getLinkedPullZones() {
         return this.linkedPullZones;
+    }
+    /**
+     * Gets the MonthlyCost property value. The MonthlyCost property
+     * @return a {@link Double}
+     */
+    @jakarta.annotation.Nullable
+    public Double getMonthlyCost() {
+        return this.monthlyCost;
+    }
+    /**
+     * Gets the MonthlyCpuTime property value. The MonthlyCpuTime property
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getMonthlyCpuTime() {
+        return this.monthlyCpuTime;
+    }
+    /**
+     * Gets the MonthlyRequestCount property value. The MonthlyRequestCount property
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getMonthlyRequestCount() {
+        return this.monthlyRequestCount;
     }
     /**
      * Gets the Name property value. The Name property
@@ -187,6 +243,14 @@ public class Script implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public String getName() {
         return this.name;
+    }
+    /**
+     * Gets the RepositoryId property value. The RepositoryId property
+     * @return a {@link Long}
+     */
+    @jakarta.annotation.Nullable
+    public Long getRepositoryId() {
+        return this.repositoryId;
     }
     /**
      * Gets the ScriptType property value. The ScriptType property
@@ -210,6 +274,7 @@ public class Script implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeObjectValue("Integration", this.getIntegration());
         writer.writeStringValue("Name", this.getName());
         writer.writeDoubleValue("ScriptType", this.getScriptType());
         writer.writeAdditionalData(this.getAdditionalData());
@@ -264,11 +329,18 @@ public class Script implements AdditionalDataHolder, Parsable {
         this.id = value;
     }
     /**
-     * Sets the IntegrationEnabled property value. The IntegrationEnabled property
-     * @param value Value to set for the IntegrationEnabled property.
+     * Sets the Integration property value. The Integration property
+     * @param value Value to set for the Integration property.
      */
-    public void setIntegrationEnabled(@jakarta.annotation.Nullable final Boolean value) {
-        this.integrationEnabled = value;
+    public void setIntegration(@jakarta.annotation.Nullable final Integration value) {
+        this.integration = value;
+    }
+    /**
+     * Sets the IntegrationId property value. The IntegrationId property
+     * @param value Value to set for the IntegrationId property.
+     */
+    public void setIntegrationId(@jakarta.annotation.Nullable final Long value) {
+        this.integrationId = value;
     }
     /**
      * Sets the LastModified property value. The LastModified property
@@ -281,8 +353,29 @@ public class Script implements AdditionalDataHolder, Parsable {
      * Sets the LinkedPullZones property value. The LinkedPullZones property
      * @param value Value to set for the LinkedPullZones property.
      */
-    public void setLinkedPullZones(@jakarta.annotation.Nullable final java.util.List<PullZone> value) {
+    public void setLinkedPullZones(@jakarta.annotation.Nullable final java.util.List<LinkedPullZone> value) {
         this.linkedPullZones = value;
+    }
+    /**
+     * Sets the MonthlyCost property value. The MonthlyCost property
+     * @param value Value to set for the MonthlyCost property.
+     */
+    public void setMonthlyCost(@jakarta.annotation.Nullable final Double value) {
+        this.monthlyCost = value;
+    }
+    /**
+     * Sets the MonthlyCpuTime property value. The MonthlyCpuTime property
+     * @param value Value to set for the MonthlyCpuTime property.
+     */
+    public void setMonthlyCpuTime(@jakarta.annotation.Nullable final Integer value) {
+        this.monthlyCpuTime = value;
+    }
+    /**
+     * Sets the MonthlyRequestCount property value. The MonthlyRequestCount property
+     * @param value Value to set for the MonthlyRequestCount property.
+     */
+    public void setMonthlyRequestCount(@jakarta.annotation.Nullable final Integer value) {
+        this.monthlyRequestCount = value;
     }
     /**
      * Sets the Name property value. The Name property
@@ -290,6 +383,13 @@ public class Script implements AdditionalDataHolder, Parsable {
      */
     public void setName(@jakarta.annotation.Nullable final String value) {
         this.name = value;
+    }
+    /**
+     * Sets the RepositoryId property value. The RepositoryId property
+     * @param value Value to set for the RepositoryId property.
+     */
+    public void setRepositoryId(@jakarta.annotation.Nullable final Long value) {
+        this.repositoryId = value;
     }
     /**
      * Sets the ScriptType property value. The ScriptType property

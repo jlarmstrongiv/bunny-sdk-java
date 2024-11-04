@@ -15,14 +15,14 @@ import bunny.sdk.loggingapiclient.LoggingApiClient;
 public class BunnySdk {
 
   public static BunnyApiClient createBunnyApiClient(CreateBunnyApiClientParameters options) {
-    final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "AccessKey",
+    final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "accesskey",
         ApiKeyLocation.HEADER);
     final OkHttpRequestAdapter adapter = new OkHttpRequestAdapter(authProvider);
     return new BunnyApiClient(adapter);
   }
 
   public static EdgeStorageApiClient createEdgeStorageApiClient(CreateEdgeStorageApiClientParameters options) {
-    final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "AccessKey",
+    final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "accesskey",
         ApiKeyLocation.HEADER);
     final OkHttpRequestAdapter adapter = new OkHttpRequestAdapter(authProvider);
     adapter.setBaseUrl(options.baseUrl);
@@ -30,14 +30,14 @@ public class BunnySdk {
   }
 
   public static StreamApiClient createStreamApiClient(CreateStreamApiClientParameters options) {
-    final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "AccessKey",
+    final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "accesskey",
         ApiKeyLocation.HEADER);
     final OkHttpRequestAdapter adapter = new OkHttpRequestAdapter(authProvider);
     return new StreamApiClient(adapter);
   }
 
   public static LoggingApiClient createLoggingApiClient(CreateLoggingApiClientParameters options) {
-    final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "AccessKey",
+    final ApiKeyAuthenticationProvider authProvider = new ApiKeyAuthenticationProvider(options.accessKey, "accesskey",
         ApiKeyLocation.HEADER);
     final OkHttpRequestAdapter adapter = new OkHttpRequestAdapter(authProvider);
     return new LoggingApiClient(adapter);

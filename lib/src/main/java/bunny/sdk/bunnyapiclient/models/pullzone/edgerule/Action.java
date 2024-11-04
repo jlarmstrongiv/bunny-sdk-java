@@ -18,6 +18,10 @@ public class Action implements AdditionalDataHolder, Parsable {
      */
     private String actionParameter2;
     /**
+     * The ActionParameter3 property
+     */
+    private String actionParameter3;
+    /**
      * The ActionType property
      */
     private Double actionType;
@@ -58,6 +62,14 @@ public class Action implements AdditionalDataHolder, Parsable {
         return this.actionParameter2;
     }
     /**
+     * Gets the ActionParameter3 property value. The ActionParameter3 property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getActionParameter3() {
+        return this.actionParameter3;
+    }
+    /**
      * Gets the ActionType property value. The ActionType property
      * @return a {@link Double}
      */
@@ -79,9 +91,10 @@ public class Action implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("ActionParameter1", (n) -> { this.setActionParameter1(n.getStringValue()); });
         deserializerMap.put("ActionParameter2", (n) -> { this.setActionParameter2(n.getStringValue()); });
+        deserializerMap.put("ActionParameter3", (n) -> { this.setActionParameter3(n.getStringValue()); });
         deserializerMap.put("ActionType", (n) -> { this.setActionType(n.getDoubleValue()); });
         return deserializerMap;
     }
@@ -93,6 +106,7 @@ public class Action implements AdditionalDataHolder, Parsable {
         Objects.requireNonNull(writer);
         writer.writeStringValue("ActionParameter1", this.getActionParameter1());
         writer.writeStringValue("ActionParameter2", this.getActionParameter2());
+        writer.writeStringValue("ActionParameter3", this.getActionParameter3());
         writer.writeDoubleValue("ActionType", this.getActionType());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -109,6 +123,13 @@ public class Action implements AdditionalDataHolder, Parsable {
      */
     public void setActionParameter2(@jakarta.annotation.Nullable final String value) {
         this.actionParameter2 = value;
+    }
+    /**
+     * Sets the ActionParameter3 property value. The ActionParameter3 property
+     * @param value Value to set for the ActionParameter3 property.
+     */
+    public void setActionParameter3(@jakarta.annotation.Nullable final String value) {
+        this.actionParameter3 = value;
     }
     /**
      * Sets the ActionType property value. The ActionType property

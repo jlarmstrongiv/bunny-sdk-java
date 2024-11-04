@@ -6,6 +6,7 @@ import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
+import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -355,6 +356,10 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
      */
     private Boolean optimizerEnableManipulationEngine;
     /**
+     * The OptimizerEnableUpscaling property
+     */
+    private Boolean optimizerEnableUpscaling;
+    /**
      * Determines if the WebP optimization should be enabled
      */
     private Boolean optimizerEnableWebP;
@@ -394,6 +399,10 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
      * The OptimizerStaticHtmlWordPressPath property
      */
     private String optimizerStaticHtmlWordPressPath;
+    /**
+     * The OptimizerTunnelEnabled property
+     */
+    private Boolean optimizerTunnelEnabled;
     /**
      * Determines if image watermarking should be enabled
      */
@@ -534,6 +543,18 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
      * The ShieldDDosProtectionType property
      */
     private Double shieldDDosProtectionType;
+    /**
+     * The StickySessionClientHeaders property
+     */
+    private UntypedNode stickySessionClientHeaders;
+    /**
+     * The StickySessionCookieName property
+     */
+    private String stickySessionCookieName;
+    /**
+     * The StickySessionType property
+     */
+    private Integer stickySessionType;
     /**
      * The ID of the storage zone that the pull zone is linked to
      */
@@ -1083,7 +1104,7 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(142);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(147);
         deserializerMap.put("AccessControlOriginHeaderExtensions", (n) -> { this.setAccessControlOriginHeaderExtensions(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("AddCanonicalHeader", (n) -> { this.setAddCanonicalHeader(n.getBooleanValue()); });
         deserializerMap.put("AddHostHeader", (n) -> { this.setAddHostHeader(n.getBooleanValue()); });
@@ -1168,6 +1189,7 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
         deserializerMap.put("OptimizerDesktopMaxWidth", (n) -> { this.setOptimizerDesktopMaxWidth(n.getIntegerValue()); });
         deserializerMap.put("OptimizerEnabled", (n) -> { this.setOptimizerEnabled(n.getBooleanValue()); });
         deserializerMap.put("OptimizerEnableManipulationEngine", (n) -> { this.setOptimizerEnableManipulationEngine(n.getBooleanValue()); });
+        deserializerMap.put("OptimizerEnableUpscaling", (n) -> { this.setOptimizerEnableUpscaling(n.getBooleanValue()); });
         deserializerMap.put("OptimizerEnableWebP", (n) -> { this.setOptimizerEnableWebP(n.getBooleanValue()); });
         deserializerMap.put("OptimizerForceClasses", (n) -> { this.setOptimizerForceClasses(n.getBooleanValue()); });
         deserializerMap.put("OptimizerImageQuality", (n) -> { this.setOptimizerImageQuality(n.getIntegerValue()); });
@@ -1178,6 +1200,7 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
         deserializerMap.put("OptimizerStaticHtmlEnabled", (n) -> { this.setOptimizerStaticHtmlEnabled(n.getBooleanValue()); });
         deserializerMap.put("OptimizerStaticHtmlWordPressBypassCookie", (n) -> { this.setOptimizerStaticHtmlWordPressBypassCookie(n.getStringValue()); });
         deserializerMap.put("OptimizerStaticHtmlWordPressPath", (n) -> { this.setOptimizerStaticHtmlWordPressPath(n.getStringValue()); });
+        deserializerMap.put("OptimizerTunnelEnabled", (n) -> { this.setOptimizerTunnelEnabled(n.getBooleanValue()); });
         deserializerMap.put("OptimizerWatermarkEnabled", (n) -> { this.setOptimizerWatermarkEnabled(n.getBooleanValue()); });
         deserializerMap.put("OptimizerWatermarkMinImageSize", (n) -> { this.setOptimizerWatermarkMinImageSize(n.getIntegerValue()); });
         deserializerMap.put("OptimizerWatermarkOffset", (n) -> { this.setOptimizerWatermarkOffset(n.getDoubleValue()); });
@@ -1213,6 +1236,9 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
         deserializerMap.put("RoutingFilters", (n) -> { this.setRoutingFilters(n.getCollectionOfEnumValues(PullZoneCreateRoutingFilters::forValue)); });
         deserializerMap.put("ShieldDDosProtectionEnabled", (n) -> { this.setShieldDDosProtectionEnabled(n.getBooleanValue()); });
         deserializerMap.put("ShieldDDosProtectionType", (n) -> { this.setShieldDDosProtectionType(n.getDoubleValue()); });
+        deserializerMap.put("StickySessionClientHeaders", (n) -> { this.setStickySessionClientHeaders(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("StickySessionCookieName", (n) -> { this.setStickySessionCookieName(n.getStringValue()); });
+        deserializerMap.put("StickySessionType", (n) -> { this.setStickySessionType(n.getIntegerValue()); });
         deserializerMap.put("StorageZoneId", (n) -> { this.setStorageZoneId(n.getLongValue()); });
         deserializerMap.put("Type", (n) -> { this.setType(n.getDoubleValue()); });
         deserializerMap.put("UseBackgroundUpdate", (n) -> { this.setUseBackgroundUpdate(n.getBooleanValue()); });
@@ -1437,6 +1463,14 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
         return this.optimizerEnableManipulationEngine;
     }
     /**
+     * Gets the OptimizerEnableUpscaling property value. The OptimizerEnableUpscaling property
+     * @return a {@link Boolean}
+     */
+    @jakarta.annotation.Nullable
+    public Boolean getOptimizerEnableUpscaling() {
+        return this.optimizerEnableUpscaling;
+    }
+    /**
      * Gets the OptimizerEnableWebP property value. Determines if the WebP optimization should be enabled
      * @return a {@link Boolean}
      */
@@ -1515,6 +1549,14 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public String getOptimizerStaticHtmlWordPressPath() {
         return this.optimizerStaticHtmlWordPressPath;
+    }
+    /**
+     * Gets the OptimizerTunnelEnabled property value. The OptimizerTunnelEnabled property
+     * @return a {@link Boolean}
+     */
+    @jakarta.annotation.Nullable
+    public Boolean getOptimizerTunnelEnabled() {
+        return this.optimizerTunnelEnabled;
     }
     /**
      * Gets the OptimizerWatermarkEnabled property value. Determines if image watermarking should be enabled
@@ -1797,6 +1839,30 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
         return this.shieldDDosProtectionType;
     }
     /**
+     * Gets the StickySessionClientHeaders property value. The StickySessionClientHeaders property
+     * @return a {@link UntypedNode}
+     */
+    @jakarta.annotation.Nullable
+    public UntypedNode getStickySessionClientHeaders() {
+        return this.stickySessionClientHeaders;
+    }
+    /**
+     * Gets the StickySessionCookieName property value. The StickySessionCookieName property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getStickySessionCookieName() {
+        return this.stickySessionCookieName;
+    }
+    /**
+     * Gets the StickySessionType property value. The StickySessionType property
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getStickySessionType() {
+        return this.stickySessionType;
+    }
+    /**
      * Gets the StorageZoneId property value. The ID of the storage zone that the pull zone is linked to
      * @return a {@link Long}
      */
@@ -1990,6 +2056,7 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
         writer.writeIntegerValue("OptimizerDesktopMaxWidth", this.getOptimizerDesktopMaxWidth());
         writer.writeBooleanValue("OptimizerEnabled", this.getOptimizerEnabled());
         writer.writeBooleanValue("OptimizerEnableManipulationEngine", this.getOptimizerEnableManipulationEngine());
+        writer.writeBooleanValue("OptimizerEnableUpscaling", this.getOptimizerEnableUpscaling());
         writer.writeBooleanValue("OptimizerEnableWebP", this.getOptimizerEnableWebP());
         writer.writeBooleanValue("OptimizerForceClasses", this.getOptimizerForceClasses());
         writer.writeIntegerValue("OptimizerImageQuality", this.getOptimizerImageQuality());
@@ -2000,6 +2067,7 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
         writer.writeBooleanValue("OptimizerStaticHtmlEnabled", this.getOptimizerStaticHtmlEnabled());
         writer.writeStringValue("OptimizerStaticHtmlWordPressBypassCookie", this.getOptimizerStaticHtmlWordPressBypassCookie());
         writer.writeStringValue("OptimizerStaticHtmlWordPressPath", this.getOptimizerStaticHtmlWordPressPath());
+        writer.writeBooleanValue("OptimizerTunnelEnabled", this.getOptimizerTunnelEnabled());
         writer.writeBooleanValue("OptimizerWatermarkEnabled", this.getOptimizerWatermarkEnabled());
         writer.writeIntegerValue("OptimizerWatermarkMinImageSize", this.getOptimizerWatermarkMinImageSize());
         writer.writeDoubleValue("OptimizerWatermarkOffset", this.getOptimizerWatermarkOffset());
@@ -2035,6 +2103,9 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
         writer.writeCollectionOfEnumValues("RoutingFilters", this.getRoutingFilters());
         writer.writeBooleanValue("ShieldDDosProtectionEnabled", this.getShieldDDosProtectionEnabled());
         writer.writeDoubleValue("ShieldDDosProtectionType", this.getShieldDDosProtectionType());
+        writer.writeObjectValue("StickySessionClientHeaders", this.getStickySessionClientHeaders());
+        writer.writeStringValue("StickySessionCookieName", this.getStickySessionCookieName());
+        writer.writeIntegerValue("StickySessionType", this.getStickySessionType());
         writer.writeLongValue("StorageZoneId", this.getStorageZoneId());
         writer.writeDoubleValue("Type", this.getType());
         writer.writeBooleanValue("UseBackgroundUpdate", this.getUseBackgroundUpdate());
@@ -2649,6 +2720,13 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
         this.optimizerEnableManipulationEngine = value;
     }
     /**
+     * Sets the OptimizerEnableUpscaling property value. The OptimizerEnableUpscaling property
+     * @param value Value to set for the OptimizerEnableUpscaling property.
+     */
+    public void setOptimizerEnableUpscaling(@jakarta.annotation.Nullable final Boolean value) {
+        this.optimizerEnableUpscaling = value;
+    }
+    /**
      * Sets the OptimizerEnableWebP property value. Determines if the WebP optimization should be enabled
      * @param value Value to set for the OptimizerEnableWebP property.
      */
@@ -2717,6 +2795,13 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
      */
     public void setOptimizerStaticHtmlWordPressPath(@jakarta.annotation.Nullable final String value) {
         this.optimizerStaticHtmlWordPressPath = value;
+    }
+    /**
+     * Sets the OptimizerTunnelEnabled property value. The OptimizerTunnelEnabled property
+     * @param value Value to set for the OptimizerTunnelEnabled property.
+     */
+    public void setOptimizerTunnelEnabled(@jakarta.annotation.Nullable final Boolean value) {
+        this.optimizerTunnelEnabled = value;
     }
     /**
      * Sets the OptimizerWatermarkEnabled property value. Determines if image watermarking should be enabled
@@ -2962,6 +3047,27 @@ public class PullZoneCreate implements AdditionalDataHolder, Parsable {
      */
     public void setShieldDDosProtectionType(@jakarta.annotation.Nullable final Double value) {
         this.shieldDDosProtectionType = value;
+    }
+    /**
+     * Sets the StickySessionClientHeaders property value. The StickySessionClientHeaders property
+     * @param value Value to set for the StickySessionClientHeaders property.
+     */
+    public void setStickySessionClientHeaders(@jakarta.annotation.Nullable final UntypedNode value) {
+        this.stickySessionClientHeaders = value;
+    }
+    /**
+     * Sets the StickySessionCookieName property value. The StickySessionCookieName property
+     * @param value Value to set for the StickySessionCookieName property.
+     */
+    public void setStickySessionCookieName(@jakarta.annotation.Nullable final String value) {
+        this.stickySessionCookieName = value;
+    }
+    /**
+     * Sets the StickySessionType property value. The StickySessionType property
+     * @param value Value to set for the StickySessionType property.
+     */
+    public void setStickySessionType(@jakarta.annotation.Nullable final Integer value) {
+        this.stickySessionType = value;
     }
     /**
      * Sets the StorageZoneId property value. The ID of the storage zone that the pull zone is linked to

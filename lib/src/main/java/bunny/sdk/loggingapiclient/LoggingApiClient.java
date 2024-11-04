@@ -47,7 +47,7 @@ public class LoggingApiClient extends BaseRequestBuilder {
      * @return a {@link WithMmWithDdWithYyRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithMmWithDdWithYyRequestBuilder withMmWithDdWithYy(@jakarta.annotation.Nonnull final Integer dd, @jakarta.annotation.Nonnull final Integer mm, @jakarta.annotation.Nonnull final Integer yy) {
+    public WithMmWithDdWithYyRequestBuilder withMmWithDdWithYy(@jakarta.annotation.Nonnull final String dd, @jakarta.annotation.Nonnull final String mm, @jakarta.annotation.Nonnull final String yy) {
         Objects.requireNonNull(dd);
         Objects.requireNonNull(mm);
         Objects.requireNonNull(yy);

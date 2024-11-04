@@ -14,6 +14,18 @@ public class ScriptCreate implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
+     * The Code property
+     */
+    private String code;
+    /**
+     * The CreateLinkedPullZone property
+     */
+    private Boolean createLinkedPullZone;
+    /**
+     * The Integration property
+     */
+    private Integration integration;
+    /**
      * The Name property
      */
     private String name;
@@ -46,15 +58,42 @@ public class ScriptCreate implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
+     * Gets the Code property value. The Code property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getCode() {
+        return this.code;
+    }
+    /**
+     * Gets the CreateLinkedPullZone property value. The CreateLinkedPullZone property
+     * @return a {@link Boolean}
+     */
+    @jakarta.annotation.Nullable
+    public Boolean getCreateLinkedPullZone() {
+        return this.createLinkedPullZone;
+    }
+    /**
      * The deserialization information for the current model
      * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
+        deserializerMap.put("Code", (n) -> { this.setCode(n.getStringValue()); });
+        deserializerMap.put("CreateLinkedPullZone", (n) -> { this.setCreateLinkedPullZone(n.getBooleanValue()); });
+        deserializerMap.put("Integration", (n) -> { this.setIntegration(n.getObjectValue(Integration::createFromDiscriminatorValue)); });
         deserializerMap.put("Name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("ScriptType", (n) -> { this.setScriptType(n.getDoubleValue()); });
         return deserializerMap;
+    }
+    /**
+     * Gets the Integration property value. The Integration property
+     * @return a {@link Integration}
+     */
+    @jakarta.annotation.Nullable
+    public Integration getIntegration() {
+        return this.integration;
     }
     /**
      * Gets the Name property value. The Name property
@@ -78,6 +117,9 @@ public class ScriptCreate implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeStringValue("Code", this.getCode());
+        writer.writeBooleanValue("CreateLinkedPullZone", this.getCreateLinkedPullZone());
+        writer.writeObjectValue("Integration", this.getIntegration());
         writer.writeStringValue("Name", this.getName());
         writer.writeDoubleValue("ScriptType", this.getScriptType());
         writer.writeAdditionalData(this.getAdditionalData());
@@ -88,6 +130,27 @@ public class ScriptCreate implements AdditionalDataHolder, Parsable {
      */
     public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
+    }
+    /**
+     * Sets the Code property value. The Code property
+     * @param value Value to set for the Code property.
+     */
+    public void setCode(@jakarta.annotation.Nullable final String value) {
+        this.code = value;
+    }
+    /**
+     * Sets the CreateLinkedPullZone property value. The CreateLinkedPullZone property
+     * @param value Value to set for the CreateLinkedPullZone property.
+     */
+    public void setCreateLinkedPullZone(@jakarta.annotation.Nullable final Boolean value) {
+        this.createLinkedPullZone = value;
+    }
+    /**
+     * Sets the Integration property value. The Integration property
+     * @param value Value to set for the Integration property.
+     */
+    public void setIntegration(@jakarta.annotation.Nullable final Integration value) {
+        this.integration = value;
     }
     /**
      * Sets the Name property value. The Name property
